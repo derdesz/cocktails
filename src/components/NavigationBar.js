@@ -19,13 +19,13 @@ export const NavigationBar = props => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <NavDropdown title="Recipes" id="basic-nav-dropdown">
-                    <NavDropdown.Item to="#action/3.1">by Spirit</NavDropdown.Item>
-                    <NavDropdown.Item to="#action/3.2">Alcoholic</NavDropdown.Item>
-                    <NavDropdown.Item to="#action/3.3">Non-Alcoholic</NavDropdown.Item>
+                    <NavDropdown.Item href="/by-spirit">by Spirit</NavDropdown.Item>
+                    <NavDropdown.Item href="/alcoholic">Alcoholic</NavDropdown.Item>
+                    <NavDropdown.Item href="/non-alcoholic">Non-Alcoholic</NavDropdown.Item>
                 </NavDropdown>
 
-                    <Nav.Link to="#home">Spirits</Nav.Link>
-                    <Nav.Link to="#link">About us</Nav.Link>
+                    <Nav.Link href="/spirits">Spirits</Nav.Link>
+                    <Nav.Link href="/about-us">About us</Nav.Link>
                 
                 </Nav>
 
