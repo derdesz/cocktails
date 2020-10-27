@@ -4,6 +4,13 @@ import BySpirit from './components/BySpirit';
 import RandomCocktail from './components/RandomCocktail';
 
 function App() {
+
+
+  function clickOnSpirit (spiritName) {
+    console.log(spiritName);
+  }
+
+
   return (
     <div className="App">
       <div className="spirit-list">
