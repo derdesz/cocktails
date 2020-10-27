@@ -14,7 +14,7 @@ export default function FilterByAlcoholic({category}) {
     return (
 
         cocktails.map((cocktail) => (
-            <div key={cocktail.idDrink} className="cocktail">
+            <div key={cocktail.idDrink} className="filtered-cocktail">
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={cocktail.strDrinkThumb} />
                     <Card.Body>
