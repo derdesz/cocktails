@@ -26,3 +26,18 @@
 #basic-navbar-nav{
   justify-content: center;
 }
+
+#alc-filtered-cocktail-container{
+  display: inline-flex;
+  width: 900px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-title{
+  height: 40px;
+}
+
+.card{
+margin-top: 20px;
+}
