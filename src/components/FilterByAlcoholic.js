@@ -8,9 +8,9 @@ export default function FilterByAlcoholic({category}) {
     useEffect(() => {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + category).then((response) => {
             setCocktails(response.data.drinks);
-          console.log("Alcoholic loaded");
+          console.log(category + " loaded");
         });
-      }, []);
+      }, [category]);
     return (
 
         cocktails.map((cocktail) => (
