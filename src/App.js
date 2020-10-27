@@ -22,7 +22,10 @@ function App() {
         <NavigationBar/>
         <div className="spirit-list">
           <BySpirit clickOnSpirit={clickOnSpirit}/>
-          <FilterByAlcoholic/>
+          <div id="alc-filtered-cocktail-container">
+            <FilterByAlcoholic category="Alcoholic"/>
+            <FilterByAlcoholic category="Non_Alcoholic"/>
+          </div>
         </div>
         <div className="three-random-cocktails">
           <RandomCocktail/>

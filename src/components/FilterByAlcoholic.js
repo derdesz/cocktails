@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
 
-export default function FilterByAlcoholic() {
+export default function FilterByAlcoholic({category}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic").then((response) => {
+        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + category).then((response) => {
             setCocktails(response.data.drinks);
           console.log("Alcoholic loaded");
         });
