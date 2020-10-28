@@ -3,6 +3,7 @@ import axios from "axios";
 
 const RandomCocktail = () => {
   const [cocktailName, setCocktailName] = useState("");
+  const [cocktailPicture, setCocktailPicture] = useState("");
 
   useEffect(() => {
     axios
@@ -10,10 +11,16 @@ const RandomCocktail = () => {
       .then((response) => {
           const randomDrinkArray = response.data.drinks;
         setCocktailName(randomDrinkArray[0].strDrink);
+        setCocktailPicture(randomDrinkArray[0].strDrinkThumb);
       });
   }, []);
 
-  return <div>{cocktailName}</div>;
+return (
+  <div>
+    <img src={cocktailPicture}/>
+    <div>{cocktailName}</div>
+  </div>
+);
 };
 
 export default RandomCocktail;

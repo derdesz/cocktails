@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import BySpirit from './components/BySpirit';
 import RandomCocktail from './components/RandomCocktail';
@@ -32,7 +32,7 @@ function App() {
           </div>
         </div>
         <div className="three-random-cocktails">
-          <h2>three random cocktails</h2>
+          <h3>Random cocktails</h3>
           <RandomCocktail/>
           <RandomCocktail/>
           <RandomCocktail/>
