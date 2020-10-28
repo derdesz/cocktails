@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,7 +10,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 export const NavigationBar = props => {
-    
+
+
+
+
     return (
         <div id="navbar">
 
@@ -30,9 +33,9 @@ export const NavigationBar = props => {
                 </Nav>
 
                 {/* Search field */}
-                <Form inline>
-                    <FormControl type="text" placeholder="by Name or Ingredient" className="mr-sm-2" />
-                    <Button variant="outline-light"><FontAwesomeIcon icon={faSearch} /></Button>
+                <Form inline action="/search" onSubmit={props.getSearchResult}>
+                    <FormControl type="text" id="search-field" value={props.searchField} onChange={props.handleChange} className="mr-sm-2"/>
+                    <Button type="submit" variant="outline-light" ><FontAwesomeIcon icon={faSearch} /></Button>
                 </Form>
                 </Navbar.Collapse>
             </Navbar>
