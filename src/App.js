@@ -31,11 +31,11 @@ function App() {
             <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
           </div>
         </div>
-        <div className="three-random-cocktails">
-          <h3>Random cocktails</h3>
-          <RandomCocktail/>
-          <RandomCocktail/>
-          <RandomCocktail/>
+        <h2>Our offer: </h2>
+        <div className="cocktail-container">
+          <RandomCocktail />
+          <RandomCocktail />
+          <RandomCocktail />
         </div>
         <div className="cocktails-by-spirit">
           <GetCocktailsBySpirit spiritName={spiritName} />
