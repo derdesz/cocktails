@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Card from 'react-bootstrap/Card';
+import CocktailCard from './CocktailCard';
 
 const RandomCocktail = () => {
   const [cocktailName, setCocktailName] = useState("");
@@ -18,12 +18,7 @@ const RandomCocktail = () => {
 
 return (
   <div className="filtered-cocktail">
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={cocktailPicture} />
-      <Card.Body>
-        <Card.Title>{cocktailName}</Card.Title>
-      </Card.Body>
-    </Card>
+    <CocktailCard  cocktailName={cocktailName} imageSrc={cocktailPicture} />
   </div>
 );
 };
