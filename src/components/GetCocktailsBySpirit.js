@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const GetCocktailsBySpirit = ({ spiritName, getDrinkList }) => {
+
+const GetCocktailsBySpirit = ({ spiritName }) => {
   const [drinkList, setDrinkList] = useState([]);
 
   useEffect(async () => {

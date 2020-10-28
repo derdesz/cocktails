@@ -32,7 +32,7 @@ function App() {
           </div>
         </div>
         <div className="three-random-cocktails">
-          <h2>three random cocktails</h2>
+          <h3>Random cocktails</h3>
           <RandomCocktail/>
           <RandomCocktail/>
           <RandomCocktail/>
