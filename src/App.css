@@ -27,7 +27,7 @@
   justify-content: center;
 }
 
-#alc-filtered-cocktail-container{
+.cocktail-container{
   display: inline-flex;
   width: 900px;
   justify-content: space-between;

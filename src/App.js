@@ -26,7 +26,7 @@ function App() {
         <div className="spirit-list">
           <h2>spirit list:</h2>
           <BySpirit clickOnSpirit={clickOnSpirit}/>
-          <div id="alc-filtered-cocktail-container">
+          <div className="cocktail-container">
             <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
             <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
           </div>
