@@ -1,3 +1,43 @@
 .App {
   text-align: center;
 }
+.navbar-expand-lg .navbar-nav .nav-link{
+  color: white;
+}
+
+.form-control, .mr-sm-2{
+  background-color: #3E3E3E ;
+  color: white;
+}
+
+.dropdown-item{
+  background-color: #3E3E3E ;
+  color: white;
+}
+
+.dropdown-menu{
+  background-color: #3E3E3E ;
+}
+
+#basic-nav-dropdown{
+  color: white;
+}
+
+#basic-navbar-nav{
+  justify-content: center;
+}
+
+.cocktail-container{
+  display: inline-flex;
+  width: 900px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-title{
+  height: 40px;
+}
+
+.card{
+margin-top: 20px;
+}
