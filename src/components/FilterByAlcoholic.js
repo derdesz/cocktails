@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Card from 'react-bootstrap/Card';
+import CocktailCard from './CocktailCard';
+
 
 export default function FilterByAlcoholic({category}) {
     const [cocktails, setCocktails] = useState([]);
@@ -9,18 +10,14 @@ export default function FilterByAlcoholic({category}) {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + category).then((response) => {
             setCocktails(response.data.drinks);
           console.log(category + " loaded");
+          console.log(response.data.drinks[0])
         });
       }, [category]);
     return (
 
         cocktails.map((cocktail) => (
             <div key={cocktail.idDrink} className="filtered-cocktail">
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={cocktail.strDrinkThumb} />
-                    <Card.Body>
-                        <Card.Title>{cocktail.strDrink}</Card.Title>
-                    </Card.Body>
-                </Card>
+                <CocktailCard  cocktailName={cocktail.strDrink} imageSrc={cocktail.strDrinkThumb} />
             </div>
           )
         )
