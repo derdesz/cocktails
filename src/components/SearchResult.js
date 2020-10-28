@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import CocktailCard from './CocktailCard.js';
 
 export function SearchResult({searchField}) {
     const [cocktails, setCocktails] = useState([]);
@@ -11,10 +12,19 @@ export function SearchResult({searchField}) {
         });
       }, [searchField]);
 
-    return (
-        <div>
-            <p>Cocktail with {searchField}</p>
-        </div>
-    )
+
+    if(cocktails){
+      return (
+        cocktails.map((cocktail) => (
+          <div key={cocktail.idDrink} className="filtered-cocktail">
+              <CocktailCard  cocktailName={cocktail.strDrink} imageSrc={cocktail.strDrinkThumb} />
+          </div>
+          )
+        )
+      )
+    } else {
+      return <p>Cocktail with {searchField}</p>
+    }
+
 }
 
