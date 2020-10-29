@@ -55,7 +55,7 @@ function App() {
             <RandomCocktail handleCardClick={handleCardClick}/>
           </div>
           <div id="main-container">
-            <div className="cocktail-container">
+            <div className="ui grid container">
               <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
               <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
 
