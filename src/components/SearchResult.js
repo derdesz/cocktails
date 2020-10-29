@@ -6,12 +6,16 @@ export function SearchResult({searchField}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + searchField)
+        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + Capitalize(searchField))
         .then((response) => {setCocktails(response.data.drinks);
         console.log(searchField + " loaded");
         });
       }, [searchField]);
 
+    function  Capitalize(str){
+        return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    
 
     if(cocktails){
       return (
