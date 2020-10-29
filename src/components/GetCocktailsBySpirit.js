@@ -26,7 +26,14 @@ const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
   
 
   if (drinkList !== undefined) {
-    return drinkList.map((drink) => <Link to={"/" + drink.idDrink} key={drink.idDrink}><CocktailCard handleCardClick={handleCardClick} cocktailId={drink.idDrink} cocktailName={drink.strDrink} imageSrc={drink.strDrinkThumb} >{drink.strDrink}</CocktailCard></Link>);
+    return drinkList.map((drink) => 
+      <div className="cocktail-container">
+        <div className ="cocktail-by-spirit">
+          <Link to={"/" + drink.idDrink} key={drink.idDrink}>
+                <CocktailCard handleCardClick={handleCardClick} cocktailId={drink.idDrink} cocktailName={drink.strDrink} imageSrc={drink.strDrinkThumb} >{drink.strDrink}</CocktailCard>
+          </Link>
+        </div>
+      </div>);
   } else return null;
 };
 
