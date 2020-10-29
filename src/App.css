@@ -67,3 +67,12 @@ margin-top: 20px;
 #main-container{
   display: inline-grid;
 }
+
+#random-cocktail-container{
+  margin-top: 20px;
+  align-items: center;
+}
+
+.random-cocktails{
+  align-items: center;
+}
