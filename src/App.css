@@ -127,7 +127,7 @@ margin-top: 20px;
 
 .ui .grid .container {
   color: white;
-  display: block !important;
+  display: inline-flex !important;
 }
 
 .filtered-cocktail{

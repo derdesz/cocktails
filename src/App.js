@@ -22,7 +22,7 @@ function App() {
 
   function clickOnSpirit (spiritName) {
     setSpiritName(spiritName);
-    document.getElementById('random-cocktail-container').className='hidden';
+    document.getElementById('random-cocktail-container').style.display = "none";
   }
 
   const clickOnFilter = () => {
