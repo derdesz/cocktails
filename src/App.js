@@ -50,7 +50,7 @@ function App() {
           <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
         </div>
         <div className="cocktail-container">
-          <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} cocktailName={currentName} imgSrc={currentImgSrc} instructions={currentInstructions} category={currentCategory}/>)}/>
+          <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
         </div> 
       </div>
     </Router>
