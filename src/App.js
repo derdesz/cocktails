@@ -27,6 +27,7 @@ function App() {
   }
 
   const handleCardClick = (id) => {
+    document.getElementById('random-cocktails').className='hidden';
     setCurrentId(id);
     console.log("clicked on card");
   }
@@ -48,7 +49,7 @@ function App() {
           <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
         </div>
 	      <div className="spirit-list">
-          <div className="ui grid container">
+          <div id="random-cocktails" className="ui grid container">
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
