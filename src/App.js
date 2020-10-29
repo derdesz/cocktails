@@ -6,7 +6,8 @@ import RandomCocktail from './components/RandomCocktail';
 import NavigationBar from "./components/NavigationBar.js";
 import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
-import { SearchResult } from "./components/SearchResult.js";
+import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
+import { SearchResultByName } from "./components/SearchResultByName.js";
 
 
 function App() {
@@ -41,7 +42,8 @@ function App() {
             <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
             <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
 
-            <Route path="/search" render={() => (<SearchResult searchField={searchField}/>)}/>
+            <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
+            <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
           </div>
         </div>
         <h2>Our offer: </h2>

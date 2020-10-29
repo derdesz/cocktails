@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import CocktailCard from './CocktailCard.js';
 
-export function SearchResult({searchField}) {
+export function SearchResultByIngredients({searchField}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + Capitalize(searchField))
+        axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + Capitalize(searchField))
         .then((response) => {setCocktails(response.data.drinks);
         console.log(searchField + " loaded");
         });
@@ -27,7 +27,7 @@ export function SearchResult({searchField}) {
         )
       )
     } else {
-      return <p>Cocktail with {searchField}</p>
+      return null;
     }
 
 }
