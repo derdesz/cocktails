@@ -22,6 +22,7 @@ function App() {
   function clickOnSpirit (spiritName) {
     console.log("Clicked");
     setSpiritName(spiritName);
+    document.getElementById('random-cocktail-container').className='hidden';
   }
 
   const clickOnFilter = () => {
