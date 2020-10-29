@@ -13,9 +13,11 @@ export default function FilterByAlcoholic({category}) {
           console.log(response.data.drinks[0])
         });
       }, [category]);
+
+    const categoryName = category.replace(/_/, ' ')
     return (
         <React.Fragment>
-          <h2>{category} cocktails</h2>
+          <h2>{categoryName} cocktails</h2>
           <div className="cocktail-container">
             <FilterContent cocktails={cocktails}/>
           </div>
