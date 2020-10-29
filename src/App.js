@@ -44,9 +44,10 @@ function App() {
     <Router>
       <div className="App">
         <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
+        <div>
+          <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
+        </div>
 	      <div className="spirit-list">
-          <h2>spirit list:</h2>
-          <BySpirit clickOnSpirit={clickOnSpirit}/>
           <div className="ui grid container">
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
