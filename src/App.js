@@ -27,7 +27,7 @@ function App() {
   }
 
   const handleCardClick = (id) => {
-    document.getElementById('random-cocktails').className='hidden';
+    document.getElementById('random-cocktail-container').className='hidden';
     setCurrentId(id);
     console.log("clicked on card");
   }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import CocktailCard from './CocktailCard.js';
+
+import SearchResultContent from './SearchResultContent.js'
 
 export function SearchResultByIngredients({searchField}) {
     const [cocktails, setCocktails] = useState([]);
@@ -19,12 +20,12 @@ export function SearchResultByIngredients({searchField}) {
 
     if(cocktails){
       return (
-        cocktails.map((cocktail) => (
-          <div key={cocktail.idDrink} className="filtered-cocktail">
-              <CocktailCard  cocktailName={cocktail.strDrink} imageSrc={cocktail.strDrinkThumb} />
+        <React.Fragment>
+          <h2>Search results for "{searchField}"</h2>
+          <div className="cocktail-container">
+            <SearchResultContent cocktails={cocktails}/>
           </div>
-          )
-        )
+        </React.Fragment>
       )
     } else {
       return <p id="search-notfound">No search result in Cocktail Ingredients for "{searchField}"</p>

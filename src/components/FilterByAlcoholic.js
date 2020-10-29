@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CocktailCard from './CocktailCard';
+import FilterContent from './FilterContent.js'
 
 
 export default function FilterByAlcoholic({category}) {
@@ -13,13 +13,14 @@ export default function FilterByAlcoholic({category}) {
           console.log(response.data.drinks[0])
         });
       }, [category]);
-    return (
 
-        cocktails.map((cocktail) => (
-            <div key={cocktail.idDrink} className="filtered-cocktail">
-                <CocktailCard  cocktailName={cocktail.strDrink} imageSrc={cocktail.strDrinkThumb} />
-            </div>
-          )
-        )
+    const categoryName = category.replace(/_/, ' ')
+    return (
+        <React.Fragment>
+          <h2>{categoryName} cocktails</h2>
+          <div className="cocktail-container">
+            <FilterContent cocktails={cocktails}/>
+          </div>
+        </React.Fragment>
     )
 }

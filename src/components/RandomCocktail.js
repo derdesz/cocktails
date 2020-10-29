@@ -3,7 +3,6 @@ import axios from "axios";
 import CocktailCard from './CocktailCard';
 import DetailedCard from './DetailedCard';
 
-const ingredientList = [];
 
 const RandomCocktail = ({handleCardClick}) => {
   const [cocktailName, setCocktailName] = useState("");
@@ -12,6 +11,9 @@ const RandomCocktail = ({handleCardClick}) => {
   const [instructions, setInstructions] = useState("");
   const [category, setCategory] = useState("");
   const [ingredients, setIngredients] = useState([]);
+  const measureList = [];
+  const ingredientList = [];
+  const recipe = [];
 
   useEffect(() => {
     axios
@@ -23,71 +25,27 @@ const RandomCocktail = ({handleCardClick}) => {
         setCocktailId(randomDrinkArray[0].idDrink);
         setInstructions(randomDrinkArray[0].strInstructions);
         setCategory(randomDrinkArray[0].strCategory);
-        if (randomDrinkArray[0].strIngredient1 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient1);
+        
+        const cocktailDetails = randomDrinkArray[0];
+        console.log("Random cocktail details: " + cocktailDetails.strDrink);
 
-        }
-        if (randomDrinkArray[0].strIngredient1 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient1);
+        const hash = new Map();
+        Object.keys(cocktailDetails).forEach(key => {
+          if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
+            ingredientList.push(cocktailDetails[key]);
+          }
 
-        }
-        if (randomDrinkArray[0].strIngredient2 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient2);
+          if (key.startsWith('strMeasure') && cocktailDetails[key]!== null){
+            measureList.push(cocktailDetails[key]);
+          }
+        });
 
+        for (let i = 0; i < ingredientList.length; i++) {
+          recipe.push(measureList[i].concat(ingredientList[i]));
         }
-        if (randomDrinkArray[0].strIngredient3 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient3);
 
-        }
-        if (randomDrinkArray[0].strIngredient4 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient4);
-
-        }
-        if (randomDrinkArray[0].strIngredient5 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient5);
-
-        }
-        if (randomDrinkArray[0].strIngredient6 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient6);
-
-        }
-        if (randomDrinkArray[0].strIngredient7 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient7);
-
-        }
-        if (randomDrinkArray[0].strIngredient8 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient8);
-
-        }
-        if (randomDrinkArray[0].strIngredient9 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient9);
-
-        }
-        if (randomDrinkArray[0].strIngredient10 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient10);
-
-        }
-        if (randomDrinkArray[0].strIngredient11 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient11);
-
-        }
-        if (randomDrinkArray[0].strIngredient12 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient12);
-
-        }
-        if (randomDrinkArray[0].strIngredient13 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient13);
-
-        }
-        if (randomDrinkArray[0].strIngredient14 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient14);
-
-        }
-        if (randomDrinkArray[0].strIngredient15 !== null) {
-          ingredientList.push(randomDrinkArray[0].strIngredient15);
-
-        }
-        setIngredients(ingredientList);
+        console.log("Recipe: " + recipe)
+        setIngredients(recipe);
         console.log(cocktailId);
       });
   }, []);
