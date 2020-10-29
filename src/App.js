@@ -47,7 +47,7 @@ function App() {
 	      <div className="spirit-list">
           <h2>spirit list:</h2>
           <BySpirit clickOnSpirit={clickOnSpirit}/>
-          <div>
+          <div className="ui grid container">
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
@@ -59,8 +59,6 @@ function App() {
             <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
             <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
 
-            <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
-            <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
             <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
           </div>
           <div id="single-item">
