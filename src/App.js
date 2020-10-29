@@ -46,7 +46,7 @@ function App() {
     <Router>
       <div className="App">
         <div id="header">
-          <h2 id="header-text">Soda-licious</h2>
+          <h1 id="header-text">Soda-licious</h1>
           <img src={header} id="header-pic"/>
         </div>
         <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
