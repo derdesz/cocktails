@@ -52,3 +52,13 @@ margin-top: 20px;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
 }
+
+#single-item{
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#main-container{
+  display: inline-grid;
+}

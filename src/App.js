@@ -53,27 +53,24 @@ function App() {
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
           </div>
-          <div className="cocktail-container">
-            <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
-            <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
+          <div id="main-container">
+            <div className="cocktail-container">
+              <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
+              <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
 
-            <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
-            <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
+              <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
+              <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
 
-            <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
-          </div>
-          <div id="single-item">
-            <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+              <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
+            </div>
+            <div id="single-item">
+              <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+            </div>
           </div>
         </div>
-        
-      
-        
-         
-
       </div>
-      </Router>
-    );
-    }
+    </Router>
+  );
+}
 
 export default App;
