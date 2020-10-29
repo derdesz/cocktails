@@ -1,22 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import {Link} from "react-router-dom";
 
-const BySpirit = (props) => {
+export default function(props){
 
 
   return (
-    <div className="list-of-spirits">
-      <ul style={{ listStyleType: "none" }}>
-        <li onClick={() => props.clickOnSpirit("vodka")}>Vodka Cocktails</li>
-        <li onClick={() => props.clickOnSpirit("gin")}>Gin Cocktails</li>
-        <li onClick={() => props.clickOnSpirit("rum")}>Rum Cocktails</li>
-        <li onClick={() => props.clickOnSpirit("tequila")}>Tequila Cocktails</li>
-        <li onClick={() => props.clickOnSpirit("scotch")}>Scotch Cocktails</li>
-      </ul>
-      <div>
-        {props.spiritName}
+    <div className="ui segment">
+      <div className="ui horizontal list">
+        <div className="item">
+          <Link className="content" to="/by-spirit/Vodka" onClick={() => {props.clickOnSpirit("Vodka")}}>Vodka Cocktails</Link>
+        </div>
+        <div className="item">
+          <Link className="content" to="/by-spirit/Gin" onClick={() => props.clickOnSpirit("Gin")}>Gin Cocktails</Link>
+        </div> 
+        <div className="item">
+          <Link className="content" to="/by-spirit/Rum" onClick={() => props.clickOnSpirit("Rum")}>Rum Cocktails</Link>
+        </div>
+        <div className="item"> 
+          <Link className="content" to="/by-spirit/Tequila" onClick={() => props.clickOnSpirit("Tequila")}>Tequila Cocktails</Link>
+        </div>
+        <div className="item">
+          <Link className="content" to="/by-spirit/Scotch" onClick={() => props.clickOnSpirit("Scotch")}>Scotch Cocktails</Link>
+        </div>
       </div>
+      
     </div>
   );
 };
 
-export default BySpirit;
