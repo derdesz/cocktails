@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 import BySpirit from './components/BySpirit';
@@ -11,8 +11,8 @@ import { SearchResult } from "./components/SearchResult.js";
 
 function App() {
   const [spiritName, setSpiritName] = useState("");
-  const [currentSearchResult, setCurrentSearchResult] = useState("");
-  const [searchField, setSearchField] = useState("by Name or Ingredient")
+  const [searchField, setSearchField] = useState(new URLSearchParams(window.location.search).get("search-field") || "by Name or Ingredient");
+  const searchRef = useRef();
 
   function clickOnSpirit (spiritName) {
     setSpiritName(spiritName);
@@ -21,19 +21,19 @@ function App() {
   const clickOnFilter = () => {
   }
 
-  function getSearchresult(event){
-    console.log("Current " + searchField);
+  function getSearchResult(event){
+    // prevent form submit
+    // event.preventDefault();
+    const fieldValue = searchRef.current.value;
+    setSearchField(fieldValue);
+    console.log("Current " + fieldValue);
   }
 
-  function handleChange(event){
-    setSearchField(event.target.value)
-    console.log("On change " + searchField)
-}
 
   return (
     <Router>
       <div className="App">
-        <NavigationBar getSearchresult={getSearchresult} searchField={searchField} handleChange={handleChange}/>
+        <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
         <div className="spirit-list">
           <h2>spirit list:</h2>
           <BySpirit clickOnSpirit={clickOnSpirit}/>
