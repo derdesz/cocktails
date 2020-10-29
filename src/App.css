@@ -75,6 +75,9 @@ margin-top: 20px;
 #random-cocktail-container{
   margin-top: 20px;
   align-items: center;
+  width: 60% !important;
+  display: block ruby;
+  
 }
 
 .random-cocktails{
