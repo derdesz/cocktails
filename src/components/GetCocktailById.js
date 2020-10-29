@@ -9,9 +9,6 @@ const GetCocktailById = ({ cocktailId }) => {
   const [category, setCategory] = useState("");
   const [ingredients, setIngredients] = useState([]);
 
-  const ingredientList = [];
-  const measureList = [];
-  const recipe = [];
 
   useEffect(() => {
     async function fetchCoctail() {
@@ -25,6 +22,10 @@ const GetCocktailById = ({ cocktailId }) => {
           setImgSrc(cocktailDetails.strDrinkThumb);
           setCategory(cocktailDetails.strCategory);
           console.log("Cocktail details: " + cocktailDetails.strDrink);
+
+          const ingredientList = [];
+          const measureList = [];
+          const recipe = [];
           
           Object.keys(cocktailDetails).forEach(key => {
             if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
@@ -37,7 +38,7 @@ const GetCocktailById = ({ cocktailId }) => {
           });
 
           for (let i = 0; i < ingredientList.length; i++) {
-            recipe.push(measureList[i].concat(ingredientList[i]));
+            recipe.push(measureList[i] + ingredientList[i]);
           }
 
           console.log("Recipe: " + recipe)

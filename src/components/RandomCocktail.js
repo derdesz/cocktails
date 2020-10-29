@@ -11,9 +11,7 @@ const RandomCocktail = ({handleCardClick}) => {
   const [instructions, setInstructions] = useState("");
   const [category, setCategory] = useState("");
   const [ingredients, setIngredients] = useState([]);
-  const measureList = [];
-  const ingredientList = [];
-  const recipe = [];
+
 
   useEffect(() => {
     axios
@@ -25,7 +23,10 @@ const RandomCocktail = ({handleCardClick}) => {
         setCocktailId(randomDrinkArray[0].idDrink);
         setInstructions(randomDrinkArray[0].strInstructions);
         setCategory(randomDrinkArray[0].strCategory);
-        
+        const measureList = [];
+        const ingredientList = [];
+        const recipe = [];
+
         const cocktailDetails = randomDrinkArray[0];
         console.log("Random cocktail details: " + cocktailDetails.strDrink);
 
@@ -41,7 +42,7 @@ const RandomCocktail = ({handleCardClick}) => {
         });
 
         for (let i = 0; i < ingredientList.length; i++) {
-          recipe.push(measureList[i].concat(ingredientList[i]));
+          recipe.push(measureList[i] + ingredientList[i]);
         }
 
         console.log("Recipe: " + recipe)
@@ -52,7 +53,7 @@ const RandomCocktail = ({handleCardClick}) => {
 
 return (
   <div className="random-cocktails">
-    <DetailedCard handleCardClick={handleCardClick} ingredients={ingredients} category={category} instructioins={instructions} cocktailId={cocktailId} cocktailName={cocktailName} imgSrc={cocktailPicture} />
+    <DetailedCard handleCardClick={handleCardClick} ingredients={ingredients} category={category} instructions={instructions} cocktailId={cocktailId} cocktailName={cocktailName} imgSrc={cocktailPicture} />
     {/* imgSrc, cocktailName, instructions, category, ingredients */}
   </div>
 );
