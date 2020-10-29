@@ -6,20 +6,29 @@ import RandomCocktail from './components/RandomCocktail';
 import NavigationBar from "./components/NavigationBar.js";
 import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
+import GetCocktailById from './components/GetCocktailById';
+
 import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
 import { SearchResultByName } from "./components/SearchResultByName.js";
 
 
 function App() {
   const [spiritName, setSpiritName] = useState("");
+  const [currentId, setCurrentId] = useState("");
   const [searchField, setSearchField] = useState(new URLSearchParams(window.location.search).get("search-field") || "by Name or Ingredient");
   const searchRef = useRef();
 
   function clickOnSpirit (spiritName) {
+    console.log("Clicked");
     setSpiritName(spiritName);
   }
 
   const clickOnFilter = () => {
+  }
+
+  const handleCardClick = (id) => {
+    setCurrentId(id);
+    console.log("clicked on card");
   }
 
   function getSearchResult(event){
@@ -35,7 +44,7 @@ function App() {
     <Router>
       <div className="App">
         <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
-        <div className="spirit-list">
+	      <div className="spirit-list">
           <h2>spirit list:</h2>
           <BySpirit clickOnSpirit={clickOnSpirit}/>
           <div className="cocktail-container">
@@ -44,17 +53,17 @@ function App() {
 
             <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
             <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
+
+            <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
+            <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
           </div>
         </div>
-        <h2>Our offer: </h2>
+        {/* <h2>Our offer: </h2>
         <div className="cocktail-container">
           <RandomCocktail />
           <RandomCocktail />
           <RandomCocktail />
-        </div>
-        <div className="cocktails-by-spirit">
-          <GetCocktailsBySpirit spiritName={spiritName} />
-        </div>
+        </div> */}
 
       </div>
     </Router>

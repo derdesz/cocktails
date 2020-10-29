@@ -6,7 +6,7 @@ export function SearchResultByIngredients({searchField}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + Capitalize(searchField))
+        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + Capitalize(searchField))
         .then((response) => {setCocktails(response.data.drinks);
         console.log(searchField + " loaded");
         });
