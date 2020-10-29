@@ -47,6 +47,11 @@ function App() {
 	      <div className="spirit-list">
           <h2>spirit list:</h2>
           <BySpirit clickOnSpirit={clickOnSpirit}/>
+          <div>
+            <RandomCocktail handleCardClick={handleCardClick}/>
+            <RandomCocktail handleCardClick={handleCardClick}/>
+            <RandomCocktail handleCardClick={handleCardClick}/>
+          </div>
           <div className="cocktail-container">
             <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
             <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
@@ -56,18 +61,20 @@ function App() {
 
             <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
             <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+            <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
+          </div>
+          <div id="single-item">
+            <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
           </div>
         </div>
-        {/* <h2>Our offer: </h2>
-        <div className="cocktail-container">
-          <RandomCocktail />
-          <RandomCocktail />
-          <RandomCocktail />
-        </div> */}
+        
+      
+        
+         
 
       </div>
-    </Router>
-  );
-}
+      </Router>
+    );
+    }
 
 export default App;
