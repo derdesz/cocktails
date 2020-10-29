@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+
+body{
+  background-color: black;
+}
 .navbar-expand-lg .navbar-nav .nav-link{
   color: white;
 }
