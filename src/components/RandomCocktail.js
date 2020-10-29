@@ -93,7 +93,7 @@ const RandomCocktail = ({handleCardClick}) => {
   }, []);
 
 return (
-  <div className="filtered-cocktail">
+  <div className="random-cocktails">
     <DetailedCard handleCardClick={handleCardClick} ingredients={ingredients} category={category} instructioins={instructions} cocktailId={cocktailId} cocktailName={cocktailName} imgSrc={cocktailPicture} />
     {/* imgSrc, cocktailName, instructions, category, ingredients */}
   </div>
