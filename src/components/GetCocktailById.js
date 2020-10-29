@@ -10,84 +10,38 @@ const GetCocktailById = ({ cocktailId }) => {
   const [ingredients, setIngredients] = useState([]);
 
   const ingredientList = [];
+  const measureList = [];
+  const recipe = [];
 
   useEffect(() => {
     async function fetchCoctail() {
       try {
         const asyncResponse = await axios(
-          "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" +
-            cocktailId
-        );
-        const cocktailDetails = asyncResponse.data.drinks[0];
-        setCocktailName(cocktailDetails.strDrink);
-        setInstructions(cocktailDetails.strInstructions);
-        setImgSrc(cocktailDetails.strDrinkThumb);
-        setCategory(cocktailDetails.strCategory);
-        if (cocktailDetails.strIngredient1 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient1);
+          "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + cocktailId
+          );
+          const cocktailDetails = asyncResponse.data.drinks[0];
+          setCocktailName(cocktailDetails.strDrink);
+          setInstructions(cocktailDetails.strInstructions);
+          setImgSrc(cocktailDetails.strDrinkThumb);
+          setCategory(cocktailDetails.strCategory);
+          console.log("Cocktail details: " + cocktailDetails.strDrink);
+          
+          Object.keys(cocktailDetails).forEach(key => {
+            if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
+              ingredientList.push(cocktailDetails[key]);
+            }
 
-        }
-        if (cocktailDetails.strIngredient1 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient1);
+            if (key.startsWith('strMeasure') && cocktailDetails[key]!== null){
+              measureList.push(cocktailDetails[key]);
+            }
+          });
 
-        }
-        if (cocktailDetails.strIngredient2 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient2);
+          for (let i = 0; i < ingredientList.length; i++) {
+            recipe.push(measureList[i].concat(ingredientList[i]));
+          }
 
-        }
-        if (cocktailDetails.strIngredient3 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient3);
-
-        }
-        if (cocktailDetails.strIngredient4 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient4);
-
-        }
-        if (cocktailDetails.strIngredient5 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient5);
-
-        }
-        if (cocktailDetails.strIngredient6 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient6);
-
-        }
-        if (cocktailDetails.strIngredient7 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient7);
-
-        }
-        if (cocktailDetails.strIngredient8 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient8);
-
-        }
-        if (cocktailDetails.strIngredient9 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient9);
-
-        }
-        if (cocktailDetails.strIngredient10 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient10);
-
-        }
-        if (cocktailDetails.strIngredient11 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient11);
-
-        }
-        if (cocktailDetails.strIngredient12 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient12);
-
-        }
-        if (cocktailDetails.strIngredient13 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient13);
-
-        }
-        if (cocktailDetails.strIngredient14 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient14);
-
-        }
-        if (cocktailDetails.strIngredient15 !== null) {
-          ingredientList.push(cocktailDetails.strIngredient15);
-
-        }
-        setIngredients(ingredientList);
+          console.log("Recipe: " + recipe)
+          setIngredients(recipe);
       } catch (err) {
         console.error(err);
       }
