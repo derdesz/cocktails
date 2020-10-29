@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar.js";
 import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
 import GetCocktailById from './components/GetCocktailById';
+import header from './header.jpg';
 
 import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
 import { SearchResultByName } from "./components/SearchResultByName.js";
@@ -44,6 +45,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <div id="header">
+          <h2 id="header-text">Soda-licious</h2>
+          <img src={header} id="header-pic"/>
+        </div>
         <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
         <div>
           <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>

@@ -78,3 +78,17 @@ margin-top: 20px;
 }
 
 
+#header-pic{
+  height: 250px;
+  float: left;
+}
+
+#header {
+  background-color: black;
+  width: 100%;
+  display: flex;
+}
+
+#header-text{
+  color: white;
+}
