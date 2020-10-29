@@ -42,8 +42,8 @@ function App() {
             <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Alcoholic" />)}/>
             <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} clickOnFilter={clickOnFilter} category="Non_Alcoholic" />)}/>
 
-            <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
             <Route path="/search" render={() => (<SearchResultByName searchField={searchField}/>)}/>
+            <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField}/>)}/>
           </div>
         </div>
         <h2>Our offer: </h2>

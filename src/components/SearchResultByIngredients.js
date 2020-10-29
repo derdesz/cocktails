@@ -27,7 +27,7 @@ export function SearchResultByIngredients({searchField}) {
         )
       )
     } else {
-      return null;
+      return <p id="search-notfound">No search result in Cocktail Ingredients for "{searchField}"</p>
     }
 
 }

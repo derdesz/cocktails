@@ -27,7 +27,7 @@ export function SearchResultByName({searchField}) {
         )
       )
     } else {
-      return null;
+      return <p id="search-notfound">No search result in Cocktail Names for "{searchField}"</p>;
     }
 
 }
