@@ -42,9 +42,9 @@ function App() {
         </div>
         <h2>Our offer: </h2>
         <div className="cocktail-container">
-          <RandomCocktail />
-          <RandomCocktail />
-          <RandomCocktail />
+          <RandomCocktail handleCardClick={handleCardClick}/>
+          <RandomCocktail handleCardClick={handleCardClick}/>
+          <RandomCocktail handleCardClick={handleCardClick}/>
         </div>
         <div className="cocktail-container">
           <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>
