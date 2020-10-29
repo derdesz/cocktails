@@ -105,3 +105,13 @@ margin-top: 20px;
   font-size: 100px;
   font-family: 'Nothing You Could Do';
 }
+
+.content{
+  color: #3E3E3E;
+  font-size: 18px;
+}
+
+.line{
+  padding-left: 12px;
+}
+
