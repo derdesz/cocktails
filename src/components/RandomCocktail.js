@@ -30,7 +30,6 @@ const RandomCocktail = ({handleCardClick}) => {
         const cocktailDetails = randomDrinkArray[0];
         console.log("Random cocktail details: " + cocktailDetails.strDrink);
 
-        const hash = new Map();
         Object.keys(cocktailDetails).forEach(key => {
           if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
             ingredientList.push(cocktailDetails[key]);

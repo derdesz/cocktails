@@ -34,8 +34,6 @@ function App() {
   }
 
   function getSearchResult(event){
-    // prevent form submit
-    // event.preventDefault();
     const fieldValue = searchRef.current.value;
     setSearchField(fieldValue);
     console.log("Current " + fieldValue);
