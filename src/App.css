@@ -53,6 +53,10 @@ margin-top: 20px;
   border-radius: .25rem;
 }
 
+
+.hidden{
+  display: none;
+
 #single-item{
   display: inline-flex;
   justify-content: center;
