@@ -7,6 +7,7 @@ import NavigationBar from "./components/NavigationBar.js";
 import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
 import GetCocktailById from './components/GetCocktailById';
+import AboutUs from './components/AboutUs'
 import header from './header.jpg';
 
 import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
@@ -20,8 +21,8 @@ function App() {
   const searchRef = useRef();
 
   function clickOnSpirit (spiritName) {
-    console.log("Clicked");
     setSpiritName(spiritName);
+    document.getElementById('random-cocktail-container').className='hidden';
   }
 
   const clickOnFilter = () => {
@@ -30,13 +31,11 @@ function App() {
   const handleCardClick = (id) => {
     document.getElementById('random-cocktail-container').className='hidden';
     setCurrentId(id);
-    console.log("clicked on card");
   }
 
   function getSearchResult(event){
     const fieldValue = searchRef.current.value;
     setSearchField(fieldValue);
-    console.log("Current " + fieldValue);
   }
 
 
@@ -48,6 +47,9 @@ function App() {
           <img src={header} id="header-pic"/>
         </div>
         <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
+        <div>
+          <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
+        </div>
         <div>
           <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
         </div>
