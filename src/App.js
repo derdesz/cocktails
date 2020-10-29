@@ -49,7 +49,7 @@ function App() {
           <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
         </div>
 	      <div className="spirit-list">
-          <div id="random-cocktails" className="ui grid container">
+          <div id="random-cocktail-container" className="ui grid container">
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
             <RandomCocktail handleCardClick={handleCardClick}/>
