@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CocktailCard from "./CocktailCard";
 import {Link} from 'react-router-dom';
+import BySpiritContent from "./BySpiritContent";
 
 
 const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
@@ -26,14 +27,14 @@ const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
   
 
   if (drinkList !== undefined) {
-    return drinkList.map((drink) => 
+    return (
+    <React.Fragment>
+      <h2 className="filter-header">{spiritName} Cocktails</h2>
       <div className="cocktail-container">
-        <div className ="cocktail-by-spirit">
-          <Link to={"/" + drink.idDrink} key={drink.idDrink}>
-                <CocktailCard handleCardClick={handleCardClick} cocktailId={drink.idDrink} cocktailName={drink.strDrink} imageSrc={drink.strDrinkThumb} >{drink.strDrink}</CocktailCard>
-          </Link>
-        </div>
-      </div>);
+        <BySpiritContent cocktails={drinkList} handleCardClick={handleCardClick}/>
+      </div>
+    </React.Fragment>
+    );
   } else return null;
 };
 
