@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import SearchResultContent from './SearchResultContent.js'
 
-export function SearchResultByName({searchField}) {
+export function SearchResultByName({searchField, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
@@ -22,9 +22,9 @@ export function SearchResultByName({searchField}) {
     if(cocktails){
       return (
         <React.Fragment>
-          <h2>Search results for "{searchField}"</h2>
+          <h2 className="filter-header">Search results in Cocktail Names for "{searchField}"</h2>
           <div className="cocktail-container">
-            <SearchResultContent cocktails={cocktails}/>
+            <SearchResultContent cocktails={cocktails} handleCardClick={handleCardClick}/>
           </div>
         </React.Fragment>
       )
