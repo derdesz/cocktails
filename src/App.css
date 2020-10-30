@@ -110,6 +110,11 @@ margin-top: 20px;
 
 #about-us-text{
   margin-top: 20px;
+  width: 70%;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .content{
