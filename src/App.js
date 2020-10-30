@@ -30,7 +30,6 @@ function App() {
   }
 
   const handleCardClick = (id) => {
-    document.getElementById('random-cocktail-container').style.display = "none";
     setCurrentId(id);
   }
 

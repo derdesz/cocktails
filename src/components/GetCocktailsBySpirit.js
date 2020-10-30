@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CocktailCard from "./CocktailCard";
-import {Link} from 'react-router-dom';
-import BySpiritContent from "./BySpiritContent";
+import DisplayContent from "./DisplayContent";
 
 
 const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
@@ -19,19 +17,12 @@ const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
   }, [spiritName, click]);
 
 
-  const handleClick = () => {
-    setClick("card-click");
-    console.log(click);
-  }
-
-  
-
   if (drinkList !== undefined) {
     return (
     <React.Fragment>
       <h2 className="filter-header">{spiritName} Cocktails</h2>
       <div className="cocktail-container">
-        <BySpiritContent cocktails={drinkList} handleCardClick={handleCardClick}/>
+        <DisplayContent cocktails={drinkList} handleCardClick={handleCardClick}/>
       </div>
     </React.Fragment>
     );

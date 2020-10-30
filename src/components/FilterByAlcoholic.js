@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import FilterContent from './FilterContent.js'
+import DisplayContent from './DisplayContent.js'
 
 
 export default function FilterByAlcoholic({category, handleCardClick}) {
@@ -19,7 +19,7 @@ export default function FilterByAlcoholic({category, handleCardClick}) {
         <React.Fragment>
           <h2 className="filter-header">{categoryName} cocktails</h2>
           <div className="cocktail-container">
-            <FilterContent cocktails={cocktails} handleCardClick={handleCardClick}/>
+            <DisplayContent cocktails={cocktails} handleCardClick={handleCardClick}/>
           </div>
         </React.Fragment>
     )

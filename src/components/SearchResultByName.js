@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import SearchResultContent from './SearchResultContent.js'
+import DisplayContent from './DisplayContent.js'
 
 export function SearchResultByName({searchField, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
@@ -24,7 +24,7 @@ export function SearchResultByName({searchField, handleCardClick}) {
         <React.Fragment>
           <h2 className="filter-header">Search results in Cocktail Names for "{searchField}"</h2>
           <div className="cocktail-container">
-            <SearchResultContent cocktails={cocktails} handleCardClick={handleCardClick}/>
+            <DisplayContent cocktails={cocktails} handleCardClick={handleCardClick}/>
           </div>
         </React.Fragment>
       )
