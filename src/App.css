@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+
+body{
+  background-color: black;
+}
 .navbar-expand-lg .navbar-nav .nav-link{
   color: white;
 }
@@ -29,7 +33,6 @@
 
 .cocktail-container{
   display: inline-flex;
-  width: 900px;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -51,6 +54,8 @@ margin-top: 20px;
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.125);
   border-radius: .25rem;
+  position: relative;
+  top: 50px;
 }
 
 
@@ -62,6 +67,7 @@ margin-top: 20px;
   display: inline-flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 #main-container{
@@ -71,10 +77,79 @@ margin-top: 20px;
 #random-cocktail-container{
   margin-top: 20px;
   align-items: center;
+  width: 60% !important;
+  display: block ruby;
+  margin-top: 20px;
+  
 }
 
 .random-cocktails{
   align-items: center;
 }
 
+
+#header-pic{
+  height: 250px;
+  float: left;
+}
+
+#header {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#header-text{
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  font-family: 'Nothing You Could Do';
+}
+
+#about-us-text{
+  margin-top: 20px;
+  width: 70%;
+  position: relative;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.content{
+  color: #3E3E3E;
+  font-size: 18px;
+}
+
+.line{
+  padding-left: 12px;
+}
+
+.header{
+  height: 50px
+}
+
+.ui .grid .container {
+  color: white;
+  display: inline-flex !important;
+}
+
+.filtered-cocktail{
+  padding-top: 50px;
+}
+
+.cocktail-by-spirit{
+  padding-top: 50px;
+}
+
+.filter-header{
+  position: relative;
+  top: 50px;
+  color:white;
+}
 

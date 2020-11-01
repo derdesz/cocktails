@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import FilterContent from './FilterContent.js'
+import DisplayContent from './DisplayContent.js'
 
 
-export default function FilterByAlcoholic({category}) {
+export default function FilterByAlcoholic({category, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(() => {
@@ -17,9 +17,9 @@ export default function FilterByAlcoholic({category}) {
     const categoryName = category.replace(/_/, ' ')
     return (
         <React.Fragment>
-          <h2>{categoryName} cocktails</h2>
+          <h2 className="filter-header">{categoryName} cocktails</h2>
           <div className="cocktail-container">
-            <FilterContent cocktails={cocktails}/>
+            <DisplayContent cocktails={cocktails} handleCardClick={handleCardClick}/>
           </div>
         </React.Fragment>
     )
