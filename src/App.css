@@ -158,5 +158,9 @@ margin-top: 20px;
   overflow-y: scroll;
   scrollbar-color: black grey;
   scrollbar-width: thin;
+  margin-left: 100px;
 }
 
+.instruction-text{
+  margin: 10px;
+}

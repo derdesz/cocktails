@@ -16,7 +16,7 @@ const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients
                         <Ingredients ingredients={ingredients}/>  
                         <div class="ui horizontal divider"></div> 
                         <h3>Instructions:</h3>
-                        <div>{instructions}</div>
+                        <div className="instruction-text">{instructions}</div>
                         
                     </div>
                 </div>
