@@ -153,3 +153,10 @@ margin-top: 20px;
   color:white;
 }
 
+.scroller {
+  height: 285px;
+  overflow-y: scroll;
+  scrollbar-color: black grey;
+  scrollbar-width: thin;
+}
+
