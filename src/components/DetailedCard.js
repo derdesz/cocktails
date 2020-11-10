@@ -10,13 +10,13 @@ const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients
             <div class="ui card">
                 <div class="ui slide masked reveal image">
                     <img src={imgSrc} class="visible content"/>
-                    <div class="hidden content">
+                    <div class="hidden content scroller">
                     
                         <h4>Ingredients:</h4>
                         <Ingredients ingredients={ingredients}/>  
                         <div class="ui horizontal divider"></div> 
                         <h3>Instructions:</h3>
-                        <div>{instructions}</div>
+                        <div className="instruction-text">{instructions}</div>
                         
                     </div>
                 </div>
