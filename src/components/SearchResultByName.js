@@ -6,16 +6,16 @@ export function SearchResultByName({searchField, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
 
     useEffect(async () => {
-        const capitalizedSearchField = Capitalize(searchField);
-        const response = await axios({
-          url: `http://localhost:3000/search/${capitalizedSearchField}`
-        });
-          setCocktails(response.data.drinks)
+      const capitalizedSearchField = Capitalize(searchField);
+      const response = await axios({
+          url: `http://localhost:8080/search/name/${capitalizedSearchField}`}
+      );
+      setCocktails(response.data.drinks);
       }, [searchField]);
 
     function  Capitalize(str){
-        return str.charAt(0).toUpperCase() + str.slice(1);
-        }
+      return str.charAt(0).toUpperCase() + str.slice(1);
+      }
     
 
 

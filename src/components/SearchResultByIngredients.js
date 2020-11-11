@@ -8,10 +8,10 @@ export function SearchResultByIngredients({searchField, handleCardClick}) {
 
     useEffect(async () => {
       const capitalizedSearchField = Capitalize(searchField);
-        const response = await axios({
-          url: `http://localhost:3000/search/${capitalizedSearchField}`}
-        );
-        setCocktails(response.data.drinks);
+      const response = await axios({
+        url: `http://localhost:8080/search/ingredient/${capitalizedSearchField}`}
+      );
+      setCocktails(response.data.drinks);
 
       }, [searchField]);
 
