@@ -8,7 +8,6 @@ const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
   const [click, setClick] = useState("");
 
   useEffect(async () => {
-    console.log("fetch");
     const response = await axios(
       "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spiritName
     );

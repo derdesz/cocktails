@@ -21,7 +21,6 @@ const GetCocktailById = ({ cocktailId }) => {
           setInstructions(cocktailDetails.strInstructions);
           setImgSrc(cocktailDetails.strDrinkThumb);
           setCategory(cocktailDetails.strCategory);
-          console.log("Cocktail details: " + cocktailDetails.strDrink);
 
           const ingredientList = [];
           const measureList = [];
@@ -40,8 +39,6 @@ const GetCocktailById = ({ cocktailId }) => {
           for (let i = 0; i < ingredientList.length; i++) {
             recipe.push(measureList[i] + ingredientList[i]);
           }
-
-          console.log("Recipe: " + recipe)
           setIngredients(recipe);
       } catch (err) {
         console.error(err);

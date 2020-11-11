@@ -8,7 +8,6 @@ export function SearchResultByName({searchField, handleCardClick}) {
     useEffect(() => {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + Capitalize(searchField))
         .then((response) => {setCocktails(response.data.drinks);
-        console.log(searchField + " loaded");
         });
       }, [searchField]);
 

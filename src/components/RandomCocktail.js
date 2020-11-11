@@ -28,7 +28,6 @@ const RandomCocktail = ({handleCardClick}) => {
         const recipe = [];
 
         const cocktailDetails = randomDrinkArray[0];
-        console.log("Random cocktail details: " + cocktailDetails.strDrink);
 
         Object.keys(cocktailDetails).forEach(key => {
           if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
@@ -43,10 +42,7 @@ const RandomCocktail = ({handleCardClick}) => {
         for (let i = 0; i < ingredientList.length; i++) {
           recipe.push(measureList[i] + ingredientList[i]);
         }
-
-        console.log("Recipe: " + recipe)
         setIngredients(recipe);
-        console.log(cocktailId);
       });
   }, []);
 
