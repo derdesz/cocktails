@@ -20,8 +20,8 @@ export const NavigationBar = props => {
                 <Nav className="mr-auto">
                 <NavDropdown title="Recipes" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/by-spirit" onClick={() => props.clickOnFilter()}>by Spirit</NavDropdown.Item>
-                    <NavDropdown.Item href="/alcoholic" onClick={() => props.clickOnFilter()}>Alcoholic</NavDropdown.Item >
-                    <NavDropdown.Item href="/non-alcoholic" onClick={() => props.clickOnFilter()}>Non-Alcoholic</NavDropdown.Item>
+                    <NavDropdown.Item href="/filter/alcoholic" onClick={() => props.clickOnFilter()}>Alcoholic</NavDropdown.Item >
+                    <NavDropdown.Item href="/filter/non-alcoholic" onClick={() => props.clickOnFilter()}>Non-Alcoholic</NavDropdown.Item>
                 </NavDropdown>
 
                     <Nav.Link href="/spirits">Spirits</Nav.Link>

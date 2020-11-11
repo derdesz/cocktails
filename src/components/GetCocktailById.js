@@ -14,7 +14,7 @@ const GetCocktailById = ({ cocktailId }) => {
     async function fetchCoctail() {
       try {
         const asyncResponse = await axios(
-          "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + cocktailId
+          `http://localhost:8080/${cocktailId}`
           );
           const cocktailDetails = asyncResponse.data.drinks[0];
           setCocktailName(cocktailDetails.strDrink);

@@ -5,10 +5,12 @@ import DisplayContent from './DisplayContent.js'
 export function SearchResultByName({searchField, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
 
-    useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + Capitalize(searchField))
-        .then((response) => {setCocktails(response.data.drinks);
+    useEffect(async () => {
+        const capitalizedSearchField = Capitalize(searchField);
+        const response = await axios({
+          url: `http://localhost:3000/search/${capitalizedSearchField}`
         });
+          setCocktails(response.data.drinks)
       }, [searchField]);
 
     function  Capitalize(str){

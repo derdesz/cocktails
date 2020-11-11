@@ -13,11 +13,12 @@ const RandomCocktail = ({handleCardClick}) => {
   const [ingredients, setIngredients] = useState([]);
 
 
-  useEffect(() => {
-    axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-      .then((response) => {
-          const randomDrinkArray = response.data.drinks;
+  useEffect(async() => {
+    const response = await axios({
+      url: `http://localhost:8080/`
+    })
+      
+        const randomDrinkArray = response.data.drinks;
         setCocktailName(randomDrinkArray[0].strDrink);
         setCocktailPicture(randomDrinkArray[0].strDrinkThumb);
         setCocktailId(randomDrinkArray[0].idDrink);
@@ -43,7 +44,7 @@ const RandomCocktail = ({handleCardClick}) => {
           recipe.push(measureList[i] + ingredientList[i]);
         }
         setIngredients(recipe);
-      });
+  
   }, []);
 
 return (

@@ -70,8 +70,8 @@ function App() {
           </div>
           <div id="main-container">
             <div className="ui grid container">
-              <Route path="/alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Alcoholic" />)}/>
-              <Route path="/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Non_Alcoholic" />)}/>
+              <Route path="/filter/alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Alcoholic" />)}/>
+              <Route path="/filter/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Non_Alcoholic" />)}/>
               <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
