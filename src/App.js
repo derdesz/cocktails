@@ -8,15 +8,18 @@ import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
 import GetCocktailById from './components/GetCocktailById';
 import AboutUs from './components/AboutUs'
+import GetSpirit from './components/GetSpirit';
 import header from './header.jpg';
 
 import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
 import { SearchResultByName } from "./components/SearchResultByName.js";
 import RandomCocktailContainer from "./components/RandomCocktailContainer";
+import SpiritList from "./components/SpiritList";
 
 
 function App() {
   const [spiritName, setSpiritName] = useState("");
+  const [spiritDescriptionName, setspiritDescriptionName] = useState("");
   const [currentId, setCurrentId] = useState("");
   const [searchField, setSearchField] = useState(new URLSearchParams(window.location.search).get("search-field") || "by Name or Ingredient");
   const searchRef = useRef();
@@ -24,6 +27,11 @@ function App() {
   function clickOnSpirit (spiritName) {
     setSpiritName(spiritName);
     document.getElementById('random-cocktail-container').style.display = "none";
+  }
+
+  function clickOnSpiritNameForDescription (name) {
+    setspiritDescriptionName(name);
+    // document.getElementById('random-cocktail-container').style.display = "none";
   }
 
   const clickOnFilter = () => {
@@ -51,6 +59,9 @@ function App() {
           <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
         </div>
         <div>
+          <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
+        </div>
+        <div>
           <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
         </div>
 	      <div className="spirit-list">
@@ -64,6 +75,7 @@ function App() {
               <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
+              <Route path={"/spirits/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
             </div>
             <div id="single-item">
               <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>

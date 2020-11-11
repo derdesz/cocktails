@@ -9,7 +9,6 @@ export function SearchResultByIngredients({searchField, handleCardClick}) {
     useEffect(() => {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + Capitalize(searchField))
         .then((response) => {setCocktails(response.data.drinks);
-        console.log(searchField + " loaded");
         });
       }, [searchField]);
 
