@@ -75,7 +75,7 @@ function App() {
               <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField} handleCardClick={handleCardClick}/>)}/>
               <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
-              <Route path={"/spirits/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
+              <Route path={"/spirits/name/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
             </div>
             <div id="single-item">
               <Route path={"/cocktail/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>

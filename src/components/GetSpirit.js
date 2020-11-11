@@ -9,8 +9,9 @@ const [spiritDescription, setSpiritDescription] = useState("");
 
     useEffect(async () => {
         const response = await axios({
-            url: `http://localhost:8080/spirits/${spiritDescriptionName}` 
+            url: `http://localhost:8080/spirits/name/${spiritDescriptionName}` 
            });
+           console.log("GetSpirit")
         const ingredientDetails = response.data.ingredients[0];
         setSpiritDescription(ingredientDetails.strDescription)
         
