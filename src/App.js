@@ -78,7 +78,7 @@ function App() {
               <Route path={"/spirits/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
             </div>
             <div id="single-item">
-              <Route path={"/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+              <Route path={"/cocktail/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
             </div>
           </div>
         </div>
