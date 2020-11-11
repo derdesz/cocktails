@@ -21,7 +21,7 @@ const [spiritDescription, setSpiritDescription] = useState("");
 
     if (spiritDescriptionName !== "") {
         return (
-            <div className="ui raised segment" id="about-us-text">
+            <div className="ui raised segment" id="description-text">
                 <h4 className="ui header">{spiritDescriptionName}</h4>
                 <p id="about-text">{spiritDescription}</p>
             </div>
