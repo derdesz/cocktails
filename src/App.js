@@ -31,7 +31,7 @@ function App() {
 
   function clickOnSpiritNameForDescription (name) {
     setspiritDescriptionName(name);
-    // document.getElementById('random-cocktail-container').style.display = "none";
+    document.getElementById('glass-background').style.display = "none";
   }
 
   const clickOnFilter = () => {
@@ -50,37 +50,59 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div id="header">
-          <Link to="/"><h1 id="header-text" >Soda-licious</h1></Link>
-          <img src={header} id="header-pic"/>
-        </div>
-        <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
-        <div>
-          <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
-        </div>
-        <div>
-          <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
-        </div>
-        <div>
-          <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
-        </div>
-	      <div className="spirit-list">
+        <div className="wrapper">
+          <div id="header">
+            <Link to="/"><h1 id="header-text" >Soda-licious</h1></Link>
+            <img src={header} id="header-pic"/>
+          </div>
+          <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
           <div>
-            <Route exact path="/" component={RandomCocktailContainer}/>
+            <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
           </div>
-          <div id="main-container">
-            <div className="ui grid container">
-              <Route path="/filter/alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Alcoholic" />)}/>
-              <Route path="/filter/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Non_Alcoholic" />)}/>
-              <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
-              <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField} handleCardClick={handleCardClick}/>)}/>
-              <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
-              <Route path={"/spirits/name/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
+          <div>
+            <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
+          </div>
+          <div>
+            <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
+          </div>
+          <div className="spirit-list">
+            <div className="hold-random-cocktail-container">
+              <Route exact path="/" component={RandomCocktailContainer}/>
             </div>
-            <div id="single-item">
-              <Route path={"/cocktail/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+            <div id="main-container">
+              <div className="ui grid container">
+                <Route path="/filter/alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Alcoholic" />)}/>
+                <Route path="/filter/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Non_Alcoholic" />)}/>
+                <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
+                <Route path="/search" render={() => (<SearchResultByIngredients searchField={searchField} handleCardClick={handleCardClick}/>)}/>
+                <Route path={"/by-spirit/" + spiritName} render={(props) => (<GetCocktailsBySpirit {...props} spiritName={spiritName} handleCardClick={handleCardClick}/>)}/>             
+                <Route path={"/spirits/name/" + spiritDescriptionName} render={(props) => (<GetSpirit {...props} spiritDescriptionName={spiritDescriptionName}/>)}/>
+              </div>
+              <div id="single-item">
+                <Route path={"/cocktail/" + currentId} render={(props) => (<GetCocktailById {...props} cocktailId={currentId} />)}/>
+              </div>
             </div>
           </div>
+          <footer>
+            <div class="ui raised inverted segment">
+                <p>© SodaLicious.com</p>
+            </div>
+          </footer>
+          {/* <footer className="page-footer font-small unique-color-dark pt-4">
+            <div className="container">
+              <ul className="list-unstyled list-inline text-center py-2">
+                <li className="list-inline-item">
+                  <h5 className="mb-1">Sign up to our</h5>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#!" className="btn btn-outline-white btn-rounded">Newsletter</a>
+                </li>
+              </ul>
+            </div>
+            <div className="footer-copyright text-center py-3">© 2020 Copyright:
+              <a href=""> SodaLicious.com</a>
+            </div>
+          </footer> */}
         </div>
       </div>
     </Router>

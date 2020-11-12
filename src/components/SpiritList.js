@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import glass from "../glass.jpg";
 
 export default function(props){
 
@@ -41,6 +42,9 @@ export default function(props){
                         <span className="line">|</span>
                     </div>
                 </div>
+            </div>
+            <div className="ui segment" id="glass-background">
+                <img className="ui centered large image" src={glass}/>
             </div>
         </div>
     );
