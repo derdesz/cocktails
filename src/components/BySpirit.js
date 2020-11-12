@@ -30,7 +30,9 @@ export default function(props){
           </div>
         </div>
       </div>
-      <RandomCocktailContainer/>
+      <div className="hold-random-cocktail-container">
+        <RandomCocktailContainer/>
+      </div>
     </div>
   );
 };
