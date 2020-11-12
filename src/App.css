@@ -172,21 +172,15 @@ margin-top: 20px;
   transform: translate(-50%, 0%);
 }
 
-#spirit-image1{  
-  position: absolute;
-  top: 400px;
-  left: 10%;
-  
-}
-
-#spirit-image2{
-  position: absolute;
-  top: 400px;
-  right: 10%;
-  transform: translate(0%, 0%, -10%, 0%);
-}
-
 .spirit-image{
-  width: 10%;
-  transform: translate(-10%, 0%);
+  width: 243px;
+}
+
+.ui .rail{
+  position: absolute;
+  top: 400px;
+}
+
+#rail-box{
+  background-color: black;
 }
