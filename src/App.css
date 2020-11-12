@@ -176,6 +176,19 @@ margin-top: 20px;
   transform: translate(-50%, 0%);
 }
 
+.spirit-image{
+  width: 243px;
+}
+
+.ui .rail{
+  position: absolute;
+  top: 400px;
+}
+
+#rail-box{
+  background-color: black;
+}
+
 #about-us-text-2{
   margin-top: 20px;
   width: 70%;
