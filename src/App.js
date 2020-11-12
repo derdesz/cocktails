@@ -26,7 +26,7 @@ function App() {
 
   function clickOnSpirit (spiritName) {
     setSpiritName(spiritName);
-    document.getElementById('random-cocktail-container').style.display = "none";
+    document.getElementsByClassName('hold-random-cocktail-container')[0].style.display = "none";
   }
 
   function clickOnSpiritNameForDescription (name) {
@@ -66,7 +66,7 @@ function App() {
             <Route path="/by-spirit" render={(props) => (<BySpirit {...props} clickOnSpirit={clickOnSpirit}/>)}/>
           </div>
           <div className="spirit-list">
-            <div className="hold-random-cocktail-container">
+            <div className="hold-random-cocktail-container" id="random-cocktail-container">
               <Route exact path="/" component={RandomCocktailContainer}/>
             </div>
             <div id="main-container">
