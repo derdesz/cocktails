@@ -8,19 +8,20 @@ const [spiritDescription, setSpiritDescription] = useState("");
 
 
     useEffect(async () => {
-        const response = await axios(
-            "https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + spiritDescriptionName
-        );
+        const response = await axios({
+            url: `http://localhost:8080/spirits/name/${spiritDescriptionName}` 
+           });
+           console.log("GetSpirit")
         const ingredientDetails = response.data.ingredients[0];
         setSpiritDescription(ingredientDetails.strDescription)
-        console.log(spiritDescription);
+        
     }, [spiritDescriptionName]);
 
-
+    console.log(spiritDescription);
 
     if (spiritDescriptionName !== "") {
         return (
-            <div className="ui raised segment" id="about-us-text">
+            <div className="ui raised segment" id="description-text">
                 <h4 className="ui header">{spiritDescriptionName}</h4>
                 <p id="about-text">{spiritDescription}</p>
             </div>

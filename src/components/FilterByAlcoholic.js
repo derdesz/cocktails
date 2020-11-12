@@ -6,12 +6,12 @@ import DisplayContent from './DisplayContent.js'
 export default function FilterByAlcoholic({category, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);
 
-    useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + category).then((response) => {
-            setCocktails(response.data.drinks);
-          console.log(category + " loaded");
-          console.log(response.data.drinks[0])
-        });
+    useEffect(async () => {
+        const response = await axios(
+          `http://localhost:8080/filter/${category}`
+          );
+          setCocktails(response.data.drinks);
+          
       }, [category]);
 
     const categoryName = category.replace(/_/, ' ')
