@@ -26,12 +26,12 @@ const [spiritDescription, setSpiritDescription] = useState("");
             <React.Fragment>
                 <div class="ui left internal rail">
                     <div class="ui segment" id="rail-box">
-                        <SpiritImage spirit={spiritDescriptionName + 1} number="1"/>
+                        <SpiritImage spirit={spiritDescriptionName} number="1"/>
                     </div>
                 </div>
                 <div class="ui right internal rail">
                     <div class="ui segment" id="rail-box">
-                        <SpiritImage spirit={spiritDescriptionName + 2} number="2"/>
+                        <SpiritImage spirit={spiritDescriptionName} number="2"/>
                     </div>
                 </div>
             
