@@ -180,9 +180,10 @@ margin-top: 20px;
   width: 243px;
 }
 
-.ui .rail{
+.ui.rail{
   position: absolute;
   top: 400px;
+  height: 50%;
 }
 
 #rail-box{
