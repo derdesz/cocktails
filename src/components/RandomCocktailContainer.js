@@ -14,11 +14,6 @@ const RandomCocktailContainer = () => {
                 <RandomCocktail/>
             </div>
         </div>
-        // {/* <div id="random-cocktail-container" className="ui grid container">
-        //     <RandomCocktail/>
-        //     <RandomCocktail/>
-        //     <RandomCocktail/>
-        // </div> */}
     );
 }
 
