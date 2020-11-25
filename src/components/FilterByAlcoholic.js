@@ -10,7 +10,7 @@ export default function FilterByAlcoholic({category, handleCardClick}) {
         const response = await axios(
           `http://localhost:8080/filter/${category}`
           );
-          setCocktails(response.data.drinks);
+          setCocktails(response.data);
           
       }, [category]);
 
