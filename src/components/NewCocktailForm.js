@@ -39,6 +39,11 @@ export default function NewCocktailForm() {
         setCurrentIngredient("");
     }
 
+    const onDeleteClick = (index) => {
+        console.log(index)
+        ingredientList.splice(index, 1)
+    }
+    
     return (
         <div className="ui inverted segment">
             <div className="ui inverted form">
@@ -69,7 +74,7 @@ export default function NewCocktailForm() {
 
                 <div className="field">
                     <label>Ingredients</label>
-                    <IngredientsTable ingredients={ingredientList}/>
+                    <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick}/>
                     <input placeholder="Please enter an ingredient with measure" type="text"
                     value={currentIngredient}
                            onChange={handleCurrentIngredientChange}
