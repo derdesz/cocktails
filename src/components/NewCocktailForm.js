@@ -43,6 +43,12 @@ export default function NewCocktailForm() {
         needsResload ? setNeedsReload(false) : setNeedsReload(true);
 
     }
+
+    const onEditClick = (index) => {
+        console.log(ingredientList[index]);
+        setCurrentIngredient(ingredientList[index]);
+        ingredientList.splice(index, 1);
+    }
     
     return (
         <div className="ui inverted segment">
@@ -75,7 +81,7 @@ export default function NewCocktailForm() {
                 <div className="field">
                     <label>Ingredients</label>
 
-                    <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick}/>
+                    <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick} onEditClick={onEditClick}/>
 
                     <input placeholder="Please enter an ingredient with measure" type="text"
                     value={currentIngredient}
