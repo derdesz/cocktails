@@ -11,7 +11,7 @@ const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
     const response = await axios(
       `http://localhost:8080/by-spirit/${spiritName}`
     );
-    const drinks = response.data.drinks;
+    const drinks = response.data;
     setDrinkList(drinks);
   }, [spiritName, click]);
 
