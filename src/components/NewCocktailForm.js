@@ -6,12 +6,7 @@ export default function NewCocktailForm() {
     const [alcoholic, setAlcoholic] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [instructions, setInstructions] = useState("");
-    let listCocktailIngredients = [];
-
-    const addIngredient = ingredient => {
-        listCocktailIngredients.push(ingredient);
-        setIngredientList(listCocktailIngredients);
-    }
+    const [currentIngredient, setCurrentIngredient] = useState("");
 
     const handleCocktailNameChange = (event) => {
         console.log(cocktailName);
@@ -31,6 +26,16 @@ export default function NewCocktailForm() {
     const handleInstructionsChange = (event) => {
         setInstructions(event.target.value);
         console.log(instructions);
+    }
+
+    const handleCurrentIngredientChange = (event) => {
+        setCurrentIngredient(event.target.value);
+        console.log(currentIngredient);
+    }
+
+    const addCurrentIngredient = (event) => {
+        ingredientList.push(currentIngredient);
+        setCurrentIngredient("");
     }
 
     return (
@@ -63,10 +68,13 @@ export default function NewCocktailForm() {
 
                 <div className="field">
                     <label>Ingredients</label>
-                    <input placeholder="Please enter an ingredient with measure" type="text"/>
+                    <input placeholder="Please enter an ingredient with measure" type="text"
+                    value={currentIngredient}
+                           onChange={handleCurrentIngredientChange}
+                    />
                 </div>
 
-                <button className="ui secondary button">
+                <button className="ui secondary button" onClick={addCurrentIngredient}>
                     Add ingredient
                 </button>
 
