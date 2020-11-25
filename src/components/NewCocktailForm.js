@@ -62,7 +62,7 @@ export default function NewCocktailForm() {
                             value={alcoholic}
                                    onClick={handleAlcoholicCheckBox}
                             />
-                            <label>Alcoholic</label>
+                            <label>This is an alcoholic cocktail</label>
                         </div>
                     </div>
 
