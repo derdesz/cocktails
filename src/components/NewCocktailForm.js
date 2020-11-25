@@ -45,11 +45,11 @@ export default function NewCocktailForm() {
     }
     
     return (
-        <div className="ui inverted segment">
+        <div className="ui inverted segment" id="new-cocktail-form">
             <div className="ui inverted form">
                 <div className="field">
                     <div className="field">
-                        <label>Cocktail Name</label>
+                        <label className="form-label">Cocktail Name</label>
                         <input placeholder="Cocktail Name" type="text"
                                name="cocktail-name"
                                value={cocktailName}
@@ -67,28 +67,28 @@ export default function NewCocktailForm() {
                     </div>
 
                     <div className="field">
-                        <label>Instructions</label>
-                        <textarea value={instructions} onChange={handleInstructionsChange}></textarea>
+                        <label className="form-label">Instructions</label>
+                        <textarea rows="2" value={instructions} onChange={handleInstructionsChange}></textarea>
                     </div>
-                </div>
+               
 
                 <div className="field">
-                    <label>Ingredients</label>
+                    <label className="form-label">Ingredients</label>
 
                     <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick}/>
-
-                    <input placeholder="Please enter an ingredient with measure" type="text"
-                    value={currentIngredient}
-                           onChange={handleCurrentIngredientChange}
-                    />
+                    <div id="ingredient-input">
+                        <input id="new-ingredient-text" placeholder="Please enter an ingredient with measurements" type="text"
+                        value={currentIngredient}
+                            onChange={handleCurrentIngredientChange}
+                        />
                         <button className="ui inverted red basic button" onClick={addCurrentIngredient}>
                             Add
                         </button>
                     </div>
                 </div>
 
-
-                <div className="ui submit button">Submit</div>
+                <div className="ui inverted red basic button" type="submit">Submit</div>
+                </div>
             </div>
         </div>
     )
