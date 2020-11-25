@@ -5,8 +5,8 @@ export default function IngredientsTableBody({ingredients}) {
         ingredients.map((ingredient) => (
             <tr>
                 <td>{ingredient}</td>
-                {/* <td><FontAwesomeIcon icon={["far", "trash-alt"]}/></td>
-                <td><FontAwesomeIcon icon={["far", "edit"]}/></td> */}
+                <td><i class="trash alternate outline icon"></i></td>
+                <td><i class="edit outline icon"></i></td>
             </tr>
         ))
     )
