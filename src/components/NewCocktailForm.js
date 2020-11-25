@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import IngredientsTable from './IngredientsTable';
 
 export default function NewCocktailForm() {
     const [ingredientList, setIngredientList] = useState([]);
@@ -68,6 +69,7 @@ export default function NewCocktailForm() {
 
                 <div className="field">
                     <label>Ingredients</label>
+                    <IngredientsTable ingredients={ingredientList}/>
                     <input placeholder="Please enter an ingredient with measure" type="text"
                     value={currentIngredient}
                            onChange={handleCurrentIngredientChange}

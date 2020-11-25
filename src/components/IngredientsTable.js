@@ -14,6 +14,7 @@ export default function IngredientsTable({ingredients}) {
                 </tr>
             </thead>
             <tbody>
+                <IngredientsTableBody ingredients={ingredients}/>               
             </tbody>
         </table>
     )
