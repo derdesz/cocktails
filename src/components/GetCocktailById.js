@@ -11,12 +11,12 @@ const GetCocktailById = ({ cocktailId }) => {
 
 
   useEffect(() => {
-    async function fetchCoctail() {
+    async function fetchCocktail() {
       try {
         const asyncResponse = await axios(
           `http://localhost:8080/${cocktailId}`
           );
-          const cocktailDetails = asyncResponse.data.drinks[0];
+          const cocktailDetails = asyncResponse.data;
           setCocktailName(cocktailDetails.strDrink);
           setInstructions(cocktailDetails.strInstructions);
           setImgSrc(cocktailDetails.strDrinkThumb);
@@ -25,7 +25,7 @@ const GetCocktailById = ({ cocktailId }) => {
           const ingredientList = [];
           const measureList = [];
           const recipe = [];
-          
+
           Object.keys(cocktailDetails).forEach(key => {
             if (key.startsWith('strIngredient') && cocktailDetails[key]!== null){
               ingredientList.push(cocktailDetails[key]);
@@ -44,7 +44,7 @@ const GetCocktailById = ({ cocktailId }) => {
         console.error(err);
       }
     }
-    fetchCoctail();
+    fetchCocktail();
   }, [cocktailId]);
 
   if (cocktailName !== null) {
