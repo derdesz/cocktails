@@ -10,7 +10,8 @@ export function SearchResultByName({searchField, handleCardClick}) {
       const response = await axios({
           url: `http://localhost:8080/search/name/${capitalizedSearchField}`}
       );
-      setCocktails(response.data.drinks);
+      setCocktails(response.data);
+      console.log(response);
       }, [searchField]);
 
     function  Capitalize(str){

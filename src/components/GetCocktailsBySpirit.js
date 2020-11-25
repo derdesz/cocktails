@@ -5,18 +5,18 @@ import DisplayContent from "./DisplayContent";
 
 const GetCocktailsBySpirit = ({ spiritName, handleCardClick }) => {
   const [drinkList, setDrinkList] = useState([]);
-  const [click, setClick] = useState("");
 
   useEffect(async () => {
     const response = await axios(
       `http://localhost:8080/by-spirit/${spiritName}`
     );
-    const drinks = response.data.drinks;
+    const drinks = response.data;
+    console.log(drinks);
     setDrinkList(drinks);
-  }, [spiritName, click]);
+  }, [spiritName]);
 
 
-  if (drinkList !== undefined) {
+  if (drinkList.length > 0) {
     return (
     <React.Fragment>
       <h2 className="filter-header">{spiritName} Cocktails</h2>
