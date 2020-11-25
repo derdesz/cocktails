@@ -8,9 +8,9 @@ export default function NewCocktailForm() {
     const [isActive, setIsActive] = useState(false);
     const [instructions, setInstructions] = useState("");
     const [currentIngredient, setCurrentIngredient] = useState("");
+    const [needsResload, setNeedsReload] = useState(true);
 
     const handleCocktailNameChange = (event) => {
-        console.log(cocktailName);
         setCocktailName(event.target.value);
     }
 
@@ -26,12 +26,10 @@ export default function NewCocktailForm() {
 
     const handleInstructionsChange = (event) => {
         setInstructions(event.target.value);
-        console.log(instructions);
     }
 
     const handleCurrentIngredientChange = (event) => {
         setCurrentIngredient(event.target.value);
-        console.log(currentIngredient);
     }
 
     const addCurrentIngredient = (event) => {
@@ -41,7 +39,9 @@ export default function NewCocktailForm() {
 
     const onDeleteClick = (index) => {
         console.log(index)
-        ingredientList.splice(index, 1)
+        ingredientList.splice(index, 1);
+        needsResload ? setNeedsReload(false) : setNeedsReload(true);
+
     }
     
     return (
@@ -74,7 +74,9 @@ export default function NewCocktailForm() {
 
                 <div className="field">
                     <label>Ingredients</label>
+
                     <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick}/>
+
                     <input placeholder="Please enter an ingredient with measure" type="text"
                     value={currentIngredient}
                            onChange={handleCurrentIngredientChange}
