@@ -81,11 +81,12 @@ export default function NewCocktailForm() {
                     value={currentIngredient}
                            onChange={handleCurrentIngredientChange}
                     />
+                        <button className="ui inverted red basic button" onClick={addCurrentIngredient}>
+                            Add
+                        </button>
+                    </div>
                 </div>
 
-                <button className="ui secondary button" onClick={addCurrentIngredient}>
-                    Add ingredient
-                </button>
 
                 <div className="ui submit button">Submit</div>
             </div>
