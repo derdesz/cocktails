@@ -43,6 +43,12 @@ export default function NewCocktailForm() {
         needsResload ? setNeedsReload(false) : setNeedsReload(true);
 
     }
+
+    const onEditClick = (index) => {
+        console.log(ingredientList[index]);
+        setCurrentIngredient(ingredientList[index]);
+        ingredientList.splice(index, 1);
+    }
     
     return (
         <div className="ui inverted segment" id="new-cocktail-form">
@@ -75,7 +81,7 @@ export default function NewCocktailForm() {
                 <div className="field">
                     <label className="form-label">Ingredients</label>
 
-                    <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick}/>
+                    <IngredientsTable ingredients={ingredientList} onDeleteClick={onDeleteClick} onEditClick={onEditClick}/>
                     <div id="ingredient-input">
                         <input id="new-ingredient-text" placeholder="Please enter an ingredient with measurements" type="text"
                         value={currentIngredient}
@@ -86,9 +92,9 @@ export default function NewCocktailForm() {
                         </button>
                     </div>
                 </div>
-
-                <div className="ui inverted red basic button" type="submit">Submit</div>
                 </div>
+
+                <div className="ui submit button">Submit</div>
             </div>
         </div>
     )

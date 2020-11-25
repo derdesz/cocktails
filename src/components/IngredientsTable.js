@@ -1,7 +1,7 @@
 import React from 'react'
 import IngredientsTableBody from './IngredientsTableBody'
 
-export default function IngredientsTable({ingredients, onDeleteClick}) {
+export default function IngredientsTable({ingredients, onDeleteClick, onEditClick}) {
 
 
     return (
@@ -14,7 +14,7 @@ export default function IngredientsTable({ingredients, onDeleteClick}) {
                 </tr>
             </thead>
             <tbody>
-                <IngredientsTableBody ingredients={ingredients} onDeleteClick={onDeleteClick}/>               
+                <IngredientsTableBody ingredients={ingredients} onDeleteClick={onDeleteClick} onEditClick={onEditClick}/>
             </tbody>
         </table>
     )
