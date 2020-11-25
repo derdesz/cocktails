@@ -8,7 +8,7 @@ export default function IngredientsTable({ingredients, onDeleteClick}) {
         <table class="ui unstackable inverted table">
             <thead>
                 <tr>
-                    <th>Ingredients</th>
+                    <th>List of ingredients with measurements</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>

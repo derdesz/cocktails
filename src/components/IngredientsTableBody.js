@@ -12,8 +12,8 @@ export default function IngredientsTableBody({ingredients, onDeleteClick}) {
         ingredients.map((ingredient, index) => (
             <tr key={index} id={index}>
                 <td>{ingredient}</td>
-                <td><i className="trash alternate outline icon" onClick={() => onDeleteClick(index)}/></td>
                 <td><i className="edit outline icon"/></td>
+                <td><i className="trash alternate outline icon" onClick={() => onDeleteClick(index)}/></td>
             </tr>
         ))
     )
