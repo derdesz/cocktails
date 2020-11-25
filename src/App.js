@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import BySpirit from './components/BySpirit';
-import RandomCocktail from './components/RandomCocktail';
+import NewCocktailForm from './components/NewCocktailForm.js';
 import NavigationBar from "./components/NavigationBar.js";
 import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
@@ -60,6 +60,9 @@ function App() {
             <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
           </div>
           <div>
+            <Route path="/add-cocktail" component ={NewCocktailForm}/>
+          </div>
+          <div>
             <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
           </div>
           <div>
@@ -88,21 +91,6 @@ function App() {
                 <p>© SodaLicious.com</p>
             </div>
           </footer>
-          {/* <footer className="page-footer font-small unique-color-dark pt-4">
-            <div className="container">
-              <ul className="list-unstyled list-inline text-center py-2">
-                <li className="list-inline-item">
-                  <h5 className="mb-1">Sign up to our</h5>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#!" className="btn btn-outline-white btn-rounded">Newsletter</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-copyright text-center py-3">© 2020 Copyright:
-              <a href=""> SodaLicious.com</a>
-            </div>
-          </footer> */}
         </div>
       </div>
     </Router>
