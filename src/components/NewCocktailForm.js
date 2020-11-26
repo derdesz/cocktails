@@ -1,14 +1,15 @@
 import React, {useState} from 'react'
 import IngredientsTable from './IngredientsTable';
+import axios from 'axios';
 
 export default function NewCocktailForm() {
     const [ingredientList, setIngredientList] = useState([]);
     const [cocktailName, setCocktailName] = useState("");
-    const [alcoholic, setAlcoholic] = useState("");
+    const [alcoholic, setAlcoholic] = useState("Non Alcoholic");
     const [isActive, setIsActive] = useState(false);
     const [instructions, setInstructions] = useState("");
     const [currentIngredient, setCurrentIngredient] = useState("");
-    const [needsResload, setNeedsReload] = useState(true);
+    const [needsReload, setNeedsReload] = useState(true);
 
     const handleCocktailNameChange = (event) => {
         setCocktailName(event.target.value);
@@ -40,7 +41,7 @@ export default function NewCocktailForm() {
     const onDeleteClick = (index) => {
         console.log(index)
         ingredientList.splice(index, 1);
-        needsResload ? setNeedsReload(false) : setNeedsReload(true);
+        needsReload ? setNeedsReload(false) : setNeedsReload(true);
 
     }
 
@@ -48,6 +49,24 @@ export default function NewCocktailForm() {
         console.log(ingredientList[index]);
         setCurrentIngredient(ingredientList[index]);
         ingredientList.splice(index, 1);
+    }
+
+    const clickOnSubmit = () => {
+        const newCocktail = {
+            strDrink: cocktailName,
+            strAlcoholic: alcoholic,
+            strInstructions: instructions,
+            allIngredients: ingredientList
+        };
+        console.log(newCocktail);
+        axios.post("http://localhost:8080/save-new-cocktail", newCocktail);
+        setCocktailName("");
+        setAlcoholic("Non Alcoholic");
+        setInstructions("");
+        setIngredientList([]);
+
+        alert("Cocktail saved successfully!");
+
     }
     
     return (
@@ -93,7 +112,7 @@ export default function NewCocktailForm() {
                     Add ingredient
                 </button>
 
-                <div className="ui submit button">Submit</div>
+                <div className="ui submit button" onClick={clickOnSubmit}>Submit</div>
             </div>
         </div>
     )
