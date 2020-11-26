@@ -36,6 +36,7 @@ export default function NewCocktailForm() {
     const addCurrentIngredient = (event) => {
         ingredientList.push(currentIngredient);
         setCurrentIngredient("");
+        document.getElementById("ingredients-table").classList.remove("hidden")
     }
 
     const onDeleteClick = (index) => {

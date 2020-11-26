@@ -5,7 +5,7 @@ export default function IngredientsTable({ingredients, onDeleteClick, onEditClic
 
 
     return (
-        <table class="ui unstackable inverted table">
+        <table class="ui unstackable inverted table hidden" id="ingredients-table">
             <thead>
                 <tr>
                     <th>List of ingredients with measurements</th>
