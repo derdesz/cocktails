@@ -20,7 +20,7 @@ export function SearchResultByIngredients({searchField, handleCardClick}) {
         }
     
 
-    if(cocktails){
+    if(cocktails.length !== 0){
       return (
         <React.Fragment>
           <h2 className="filter-header">Search results in Cocktail Ingredients for "{searchField}"</h2>
