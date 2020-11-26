@@ -39,14 +39,14 @@ export default function NewCocktailForm() {
     }
 
     const onDeleteClick = (index) => {
-        console.log(index)
+        // console.log(index)
         ingredientList.splice(index, 1);
         needsReload ? setNeedsReload(false) : setNeedsReload(true);
 
     }
 
     const onEditClick = (index) => {
-        console.log(ingredientList[index]);
+        // console.log(ingredientList[index]);
         setCurrentIngredient(ingredientList[index]);
         ingredientList.splice(index, 1);
     }
@@ -58,7 +58,7 @@ export default function NewCocktailForm() {
             strInstructions: instructions,
             allIngredients: ingredientList
         };
-        console.log(newCocktail);
+        // console.log(newCocktail);
         axios.post("http://localhost:8080/save-new-cocktail", newCocktail);
         setCocktailName("");
         setAlcoholic("Non Alcoholic");

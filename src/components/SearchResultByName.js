@@ -11,7 +11,7 @@ export function SearchResultByName({searchField, handleCardClick}) {
           url: `http://localhost:8080/search/name/${capitalizedSearchField}`}
       );
       setCocktails(response.data);
-      console.log(response);
+      // console.log(response);
       }, [searchField]);
 
     function  Capitalize(str){
