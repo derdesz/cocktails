@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import DetailedCard from "./DetailedCard";
+import emptyCocktail from "../new_cocktail.png"
 
 const GetCocktailById = ({cocktailId}) => {
     const [cocktailName, setCocktailName] = useState("");
@@ -20,11 +21,12 @@ const GetCocktailById = ({cocktailId}) => {
                 const recipe = [];
                 setCocktailName(cocktailDetails.strDrink);
                 setInstructions(cocktailDetails.strInstructions);
-                setImgSrc(cocktailDetails.strDrinkThumb);
                 setCategory(cocktailDetails.strCategory);
-                if (cocktailDetails[0].strIngredient1 !== null) {
+                if (cocktailDetails.strIngredient1 !== null) {
                     const ingredientList = [];
                     const measureList = [];
+                    
+                    setImgSrc(cocktailDetails.strDrinkThumb);
 
                     Object.keys(cocktailDetails).forEach(key => {
                         if (key.startsWith('strIngredient') && cocktailDetails[key] !== null) {
@@ -43,8 +45,10 @@ const GetCocktailById = ({cocktailId}) => {
                 }
                 else {
                     recipe.push(cocktailDetails.allIngredients);
+                    setImgSrc(emptyCocktail)
                 }
                 setIngredients(recipe);
+                
             } catch (err) {
                 console.error(err);
             }
