@@ -72,8 +72,8 @@ function App() {
             <div className="hold-random-cocktail-container" id="random-cocktail-container">
               <Route exact path="/" component={RandomCocktailContainer}/>
             </div>
-            <div id="main-container">
-              <div className="ui grid container">
+            <div>
+              <div className="ui grid">
                 <Route path="/filter/alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Alcoholic" />)}/>
                 <Route path="/filter/non-alcoholic" render={(props) => (<FilterByAlcoholic {...props} handleCardClick={handleCardClick} category="Non_Alcoholic" />)}/>
                 <Route path="/search" render={() => (<SearchResultByName searchField={searchField} handleCardClick={handleCardClick}/>)}/>
