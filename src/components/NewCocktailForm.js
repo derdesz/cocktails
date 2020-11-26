@@ -113,7 +113,7 @@ export default function NewCocktailForm() {
                 </div>
                 </div>
 
-                <div className="ui submit button" onClick={clickOnSubmit}>Submit</div>
+                <div className="ui inverted red basic button" onClick={clickOnSubmit}>Submit</div>
             </div>
         </div>
     )
