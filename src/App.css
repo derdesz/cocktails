@@ -151,8 +151,8 @@ margin-top: 20px;
 }
 
 .filter-header{
-  position: relative;
-  top: 50px;
+  /*position: relative;*/
+  /*top: 50px;*/
   color:white;
 }
 
@@ -225,4 +225,28 @@ footer {
 
 #glass-background {
   background: black;
+}
+
+#new-cocktail-form{
+  max-width: 40%;
+  margin: auto;
+}
+
+.form-label{
+  text-align: left;
+  font-size: 16px  !important;
+}
+
+#ingredient-input{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#new-ingredient-text{
+  margin-right: 10px;
+}
+
+.column {
+  margin-bottom: 20px;
 }
