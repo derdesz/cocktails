@@ -22,32 +22,13 @@ const GetCocktailById = ({cocktailId}) => {
                 setCocktailName(cocktailDetails.strDrink);
                 setInstructions(cocktailDetails.strInstructions);
                 setCategory(cocktailDetails.strCategory);
-                if (cocktailDetails.strIngredient1 !== null) {
-                    const ingredientList = [];
-                    const measureList = [];
-                    
-                    setImgSrc(cocktailDetails.strDrinkThumb);
-
-                    Object.keys(cocktailDetails).forEach(key => {
-                        if (key.startsWith('strIngredient') && cocktailDetails[key] !== null) {
-                            ingredientList.push(cocktailDetails[key]);
-                        }
-
-                        if (key.startsWith('strMeasure') && cocktailDetails[key] !== null) {
-                            measureList.push(cocktailDetails[key]);
-                        }
-                    });
-
-                    for (let i = 0; i < ingredientList.length; i++) {
-                        recipe.push(measureList[i] + ingredientList[i]);
-                    }
-
+                if (cocktailDetails.strDrinkThumb !== null) {                    
+                    setImgSrc(cocktailDetails.strDrinkThumb)
                 }
                 else {
-                    recipe.push(cocktailDetails.allIngredients);
                     setImgSrc(emptyCocktail)
                 }
-                setIngredients(recipe);
+                setIngredients(cocktailDetails.allIngredients);
                 
             } catch (err) {
                 console.error(err);
