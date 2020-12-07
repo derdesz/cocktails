@@ -27,7 +27,8 @@ export const NavigationBar = props => {
                     <Nav.Link href="/spirits">Spirits</Nav.Link>
                     <Nav.Link href="/about-us">About us</Nav.Link>
                     <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
-                
+                    <Nav.Link href="/registration">Registration</Nav.Link>
+                    <Nav.Link href="/login">Log in</Nav.Link>
                 </Nav>
 
                 {/* Search field */}
