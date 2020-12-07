@@ -2,20 +2,20 @@ import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
 import BySpirit from './components/BySpirit';
-import NewCocktailForm from './components/NewCocktailForm.js';
+import NewCocktailForm from './components/forms/NewCocktailForm.js';
 import NavigationBar from "./components/NavigationBar.js";
-import FilterByAlcoholic from "./components/FilterByAlcoholic";
-import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
-import GetCocktailById from './components/GetCocktailById';
+import FilterByAlcoholic from "./components/apis/FilterByAlcoholic";
+import GetCocktailsBySpirit from "./components/apis/GetCocktailsBySpirit";
+import GetCocktailById from './components/apis/GetCocktailById';
 import AboutUs from './components/AboutUs'
-import RegistrationForm from './components/RegistrationForm'
-import LoginForm from './components/LoginForm.js'
-import GetSpirit from './components/GetSpirit';
+import RegistrationForm from './components/forms/RegistrationForm'
+import LoginForm from './components/forms/LoginForm.js'
+import GetSpirit from './components/apis/GetSpirit';
 import header from './header.jpg';
 
-import { SearchResultByIngredients } from "./components/SearchResultByIngredients.js";
-import { SearchResultByName } from "./components/SearchResultByName.js";
-import RandomCocktailContainer from "./components/RandomCocktailContainer";
+import { SearchResultByIngredients } from "./components/apis/SearchResultByIngredients.js";
+import { SearchResultByName } from "./components/apis/SearchResultByName.js";
+import RandomCocktailContainer from "./components/cards/RandomCocktailContainer";
 import SpiritList from "./components/SpiritList";
 
 

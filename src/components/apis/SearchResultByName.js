@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
-import DisplayContent from './DisplayContent.js'
+import DisplayContent from '../cards/DisplayContent.js'
 
 export function SearchResultByName({searchField, handleCardClick}) {
     const [cocktails, setCocktails] = useState([]);

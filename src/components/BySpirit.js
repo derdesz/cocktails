@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import RandomCocktailContainer from "./RandomCocktailContainer";
+import RandomCocktailContainer from "./cards/RandomCocktailContainer";
 
 export default function(props){
 

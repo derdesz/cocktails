@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import emptyCocktail from "../new_cocktail.png"
+import emptyCocktail from "../../new_cocktail.png"
 
 export default function CocktailCard({cocktailName, imageSrc, cocktailId, handleCardClick}) {
 

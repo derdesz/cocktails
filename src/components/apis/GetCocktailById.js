@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import DetailedCard from "./DetailedCard";
-import emptyCocktail from "../new_cocktail.png"
+import DetailedCard from "../cards/DetailedCard";
+import emptyCocktail from "../../new_cocktail.png"
 
 const GetCocktailById = ({cocktailId}) => {
     const [cocktailName, setCocktailName] = useState("");

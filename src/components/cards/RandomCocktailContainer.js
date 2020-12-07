@@ -1,5 +1,5 @@
 import React from 'react';
-import RandomCocktail from './RandomCocktail';
+import RandomCocktail from '../apis/RandomCocktail';
 
 const RandomCocktailContainer = () => {
     return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CocktailCard from './CocktailCard';
-import DetailedCard from './DetailedCard';
+import CocktailCard from '../cards/CocktailCard';
+import DetailedCard from '../cards/DetailedCard';
 
 
 const RandomCocktail = ({handleCardClick}) => {

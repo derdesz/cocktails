@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import DisplayContent from './DisplayContent.js'
+import DisplayContent from '../cards/DisplayContent.js'
 
 
 export default function FilterByAlcoholic({category, handleCardClick}) {

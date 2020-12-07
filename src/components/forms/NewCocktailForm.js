@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import IngredientsTable from './IngredientsTable';
+import IngredientsTable from '../cards/IngredientsTable';
 import axios from 'axios';
 
 export default function NewCocktailForm() {

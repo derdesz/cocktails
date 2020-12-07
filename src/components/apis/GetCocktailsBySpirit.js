@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import DisplayContent from "./DisplayContent";
+import DisplayContent from "../cards/DisplayContent";
 
 
 const GetCocktailsBySpirit = ({spiritName, handleCardClick}) => {
