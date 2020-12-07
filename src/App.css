@@ -250,3 +250,13 @@ footer {
 .column {
   margin-bottom: 20px;
 }
+
+.centered-form{
+  margin: auto;
+  width: 300px;
+}
+
+
+.right-align-form{
+text-align: right;
+}
