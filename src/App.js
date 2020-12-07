@@ -8,6 +8,7 @@ import FilterByAlcoholic from "./components/FilterByAlcoholic";
 import GetCocktailsBySpirit from "./components/GetCocktailsBySpirit";
 import GetCocktailById from './components/GetCocktailById';
 import AboutUs from './components/AboutUs'
+import RegistrationForm from './components/RegistrationForm'
 import GetSpirit from './components/GetSpirit';
 import header from './header.jpg';
 
@@ -61,6 +62,9 @@ function App() {
           </div>
           <div>
             <Route path="/add-cocktail" component ={NewCocktailForm}/>
+          </div>
+	        <div>
+            <Route path="/registration" render={(props) => (<RegistrationForm {...props}/>)}/>
           </div>
           <div>
             <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
