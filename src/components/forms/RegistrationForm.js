@@ -55,7 +55,7 @@ export default function RegistrationForm() {
                             <label>Name</label>
                             <input type="text" placeholder="Name" value={name} onChange={handleNameChange}/>
                         </div>
-                        <div className="ui submit button" onClick={clickOnRegistration}>Register</div>
+                        <div className="ui inverted red basic button" onClick={clickOnRegistration}>Register</div>
                     </div>
                 </div>
             </div>
