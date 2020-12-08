@@ -260,3 +260,9 @@ footer {
 .right-align-form{
 text-align: right;
 }
+
+.form-header{
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: white;
+}

@@ -39,7 +39,7 @@ export default function RegistrationForm() {
 
     return (
         <React.Fragment>
-            <h2>Registration</h2>
+            <h2 className="form-header">Registration</h2>
             <div className="ui inverted segment">
                 <div className="centered-form">
                     <div className="ui inverted form right-align-form">

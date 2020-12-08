@@ -24,7 +24,7 @@ export default function LoginForm() {
 
     return (
         <React.Fragment>
-        <h2>Log in</h2>
+        <h2 className="form-header">Log in</h2>
         <div className="ui inverted segment">
             <div className="centered-form">
                 <div className="ui inverted form right-align-form">
