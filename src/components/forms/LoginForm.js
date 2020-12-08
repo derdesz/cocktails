@@ -36,7 +36,7 @@ export default function LoginForm() {
                         <label>Password</label>
                         <input type="password" placeholder="Password" value={password} onChange={handlePasswordChange}/>
                     </div>
-                    <div className="ui submit button" onClick={clickOnLogIn}>Log in</div>
+                    <div className="ui inverted red basic button" onClick={clickOnLogIn}>Log in</div>
                 </div>
             </div>
         </div>
