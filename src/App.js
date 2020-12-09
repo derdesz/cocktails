@@ -24,6 +24,7 @@ function App() {
   const [spiritDescriptionName, setspiritDescriptionName] = useState("");
   const [currentId, setCurrentId] = useState("");
   const [searchField, setSearchField] = useState(new URLSearchParams(window.location.search).get("search-field") || "by Name or Ingredient");
+  const [isLoggedIn, setIsLoggedIn] = useState("");
   const searchRef = useRef();
 
   function clickOnSpirit (spiritName) {
@@ -48,6 +49,14 @@ function App() {
     setSearchField(fieldValue);
   }
 
+  const logIn = (name) => {
+    setIsLoggedIn(name);
+  }
+
+  const handleLogout = () => {
+    setIsLoggedIn("");
+  }
+
 
   return (
     <Router>
@@ -57,7 +66,7 @@ function App() {
             <Link to="/"><h1 id="header-text" >Soda-licious</h1></Link>
             <img src={header} id="header-pic"/>
           </div>
-          <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef}/>
+          <NavigationBar getSearchResult={getSearchResult} searchField={searchField} forwardedRef={searchRef} isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>
           <div>
             <Route path="/about-us" render={(props) => (<AboutUs {...props}/>)}/>
           </div>
@@ -68,7 +77,7 @@ function App() {
             <Route path="/registration" render={(props) => (<RegistrationForm {...props}/>)}/>
           </div>
           <div>
-            <Route path="/login" render={(props) => (<LoginForm {...props}/>)}/>
+            <Route path="/login" render={(props) => (<LoginForm {...props} logIn={logIn}/>)}/>
           </div>
           <div>
             <Route path="/spirits" render={(props) => (<SpiritList {...props} clickOnSpiritNameForDescription={clickOnSpiritNameForDescription}/>)}/>
