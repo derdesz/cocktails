@@ -7,9 +7,16 @@ import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import IsLoggedIn from "./IsLoggedIn";
 
 
 export const NavigationBar = props => {
+
+    function showLogIn () {
+        if (props.isLoggedIn.length === 0) {
+            document.getElementById("isLoggedIn").style.display = "none";
+        };
+    }
 
     return (
         <div id="navbar">
@@ -29,6 +36,8 @@ export const NavigationBar = props => {
                     <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
                     <Nav.Link href="/registration">Registration</Nav.Link>
                     <Nav.Link href="/login">Log in</Nav.Link>
+                    <IsLoggedIn isLoggedIn={props.isLoggedIn} handleLogout={props.handleLogout}/>
+                    {/*<p id="isLoggedIn">{You are logged in as: {props.isLoggedIn}}</p>*/}
                 </Nav>
 
                 {/* Search field */}
