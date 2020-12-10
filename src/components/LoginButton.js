@@ -10,5 +10,4 @@ export default function LoginButton () {
     } else {
         return <Nav.Link href="/login">Log in</Nav.Link>
     }
-
 }
