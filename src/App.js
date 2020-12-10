@@ -29,7 +29,9 @@ function App() {
   );
   const [isLoggedIn, setIsLoggedIn] = useState("");
   const searchRef = useRef();
+  const [successfulLogin, setSuccessFulLogin] = useState(false);
 
+  console.log(successfulLogin);
   function clickOnSpirit(spiritName) {
     setSpiritName(spiritName);
     document.getElementsByClassName(
@@ -61,6 +63,10 @@ function App() {
     setIsLoggedIn("");
   };
 
+  const handleSuccessfulLogin = () =>{
+    setSuccessFulLogin(true);
+  }
+
   return (
     <Router>
       <div className="App">
@@ -76,6 +82,7 @@ function App() {
             searchField={searchField}
             forwardedRef={searchRef}
             isLoggedIn={isLoggedIn}
+            successfulLogin={successfulLogin}
             handleLogout={handleLogout}
           />
           <div>
@@ -96,7 +103,7 @@ function App() {
           <div>
             <Route
               path="/login"
-              render={(props) => <LoginForm {...props} logIn={logIn} />}
+              render={(props) => <LoginForm {...props} logIn={logIn} successfulLogin={successfulLogin} handleSuccessfulLogin={handleSuccessfulLogin} />}
             />
           </div>
           <div>
