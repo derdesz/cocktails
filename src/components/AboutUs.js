@@ -3,7 +3,7 @@ import bartender from '../bartender.jpg';
 
 const AboutUs = (props) => {
 
-    console.log("ABOUT US");
+
     return (
         <div>
             <div className="ui raised segment" id="about-us-text">

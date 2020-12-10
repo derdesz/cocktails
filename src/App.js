@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {useCookies} from "react-cookie";
 import "./App.css";
 import BySpirit from "./components/BySpirit";
 import NewCocktailForm from "./components/forms/NewCocktailForm.js";
@@ -30,7 +31,11 @@ function App() {
   );
   const [isLoggedIn, setIsLoggedIn] = useState("");
   const searchRef = useRef();
+  const [successfulLogin, setSuccessFulLogin] = useState(false);
+  const [cookies, setCookie] = useCookies(["email"]);
 
+
+  console.log(cookies.email);
   function clickOnSpirit(spiritName) {
     setSpiritName(spiritName);
     document.getElementsByClassName(
@@ -43,7 +48,7 @@ function App() {
     document.getElementById("glass-background").style.display = "none";
   }
 
-  const clickOnFilter = () => {};
+  // const clickOnFilter = () => {};
 
   const handleCardClick = (id) => {
     setCurrentId(id);
@@ -55,12 +60,20 @@ function App() {
   }
 
   const logIn = (name) => {
+    setCookie("email", name, {
+      path: "/"
+    });
     setIsLoggedIn(name);
   };
 
   const handleLogout = () => {
     setIsLoggedIn("");
   };
+
+  const handleSuccessfulLogin = () =>{
+    setSuccessFulLogin(true);
+
+  }
 
   return (
     <Router>
@@ -77,6 +90,7 @@ function App() {
             searchField={searchField}
             forwardedRef={searchRef}
             isLoggedIn={isLoggedIn}
+            successfulLogin={successfulLogin}
             handleLogout={handleLogout}
           />
           <div>
@@ -97,7 +111,7 @@ function App() {
           <div>
             <Route
               path="/login"
-              render={(props) => <LoginForm {...props} logIn={logIn} />}
+              render={(props) => <LoginForm {...props} logIn={logIn} successfulLogin={successfulLogin} handleSuccessfulLogin={handleSuccessfulLogin} />}
             />
           </div>
           <div>
