@@ -3,7 +3,29 @@ import Ingredients from './Ingredients';
 
 
 
-const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients}) => {
+const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients, cocktailId}) => {
+    
+    let liked = false;
+    const heartClick = event => {
+        console.log("reached liked")
+        liked = !liked; // toggle the like ( flipping the variable)
+	
+        // this is what we clicked on
+        const target = event.currentTarget;
+        
+        if (liked) {
+            // remove empty heart if liked and add the full heart
+            target.classList.remove('far');
+            target.classList.add('fas', 'pulse');
+        } else {
+            // remove full heart if unliked and add empty heart
+            target.classList.remove('fas');
+            target.classList.add('far');
+            target.classList.remove('pulse');
+        }
+    }
+
+
     if(cocktailName !== "") {
         return ( 
         
@@ -11,7 +33,8 @@ const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients
                 <div className="ui slide masked reveal image">
                     <img src={imgSrc} className="visible content"/>
                     <div className="hidden content scroller">
-                    
+                    <i class="far fa-heart js-heart heart" data-cocktail-id={cocktailId} onClick={heartClick}></i> 
+
                         <h4>Ingredients:</h4>
                         <Ingredients ingredients={ingredients}/>  
                         <div className="ui horizontal divider"></div>

@@ -46,6 +46,7 @@ const GetCocktailById = ({cocktailId}) => {
                 instructions={instructions}
                 category={category}
                 ingredients={ingredients}
+                cocktailId={cocktailId}
             />
         );
     } else return <h2>Empty list</h2>;
