@@ -1,5 +1,6 @@
 import React from 'react';
 import Ingredients from './Ingredients';
+import axios from 'axios';
 
 
 
@@ -23,6 +24,12 @@ const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients
             target.classList.add('far');
             target.classList.remove('pulse');
         }
+
+        axios({
+            method: 'post',
+            url: `http://localhost:8080/favorites/${cocktailId}`,
+            withCredentials: true
+            })
     }
 
 
