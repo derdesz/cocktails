@@ -68,6 +68,7 @@ function App() {
 
   const handleLogout = () => {
     setIsLoggedIn("");
+    setCookie("email", "", {path: "/"})
   };
 
   const handleSuccessfulLogin = () =>{
