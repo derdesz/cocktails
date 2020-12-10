@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import * as axios from "axios";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function LoginForm() {
     const [email, setEmail] = useState("");
@@ -11,9 +11,18 @@ export default function LoginForm() {
         setUsername(event.target.value);
     }
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const checkValidLogin = (response) => {
+    if (response.data.name) {
+      logIn(response.data.name);
+      console.log(response.data.name);
+    } else {
+      alert("not ok");
     }
+  };
 
     const clickOnLogIn = () => {
         var bodyFormData = new FormData();
