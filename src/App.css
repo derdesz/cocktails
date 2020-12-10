@@ -260,3 +260,32 @@ footer {
 .right-align-form{
 text-align: right;
 }
+
+.form-header{
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: white;
+}
+
+.fas {
+	color: red;
+}
+
+.heart {
+  cursor: pointer;
+  font-size: 30pt;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.pulse {
+	animation: pulse .5s;
+}
+
+@keyframes .pulse {
+	0% {transform: scale(1); }
+	100% {transform: scale(1);}
+	100% {transform: scale(1);}
+}
+
