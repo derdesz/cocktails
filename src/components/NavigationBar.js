@@ -10,6 +10,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import IsLoggedIn from "./IsLoggedIn";
 import {useCookies} from "react-cookie";
 import LoginButton from "./LoginButton";
+import Favorites from "./Favorites";
 
 export const NavigationBar = (props) => {
     const [cookies, setCookie] = useCookies(["email"]);
@@ -45,7 +46,7 @@ export const NavigationBar = (props) => {
             <Nav.Link href="/about-us">About us</Nav.Link>
             <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
             <Nav.Link href="/registration">Registration</Nav.Link>
-            {/*<Nav.Link href="/login">Log in</Nav.Link>*/}
+            <Favorites/>
             <LoginButton/>
             <IsLoggedIn
               isLoggedIn={props.isLoggedIn}
