@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {useCookies} from "react-cookie";
 import "./App.css";
 import BySpirit from "./components/BySpirit";
 import NewCocktailForm from "./components/forms/NewCocktailForm.js";
@@ -30,8 +31,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState("");
   const searchRef = useRef();
   const [successfulLogin, setSuccessFulLogin] = useState(false);
+  const [cookies, setCookie] = useCookies(["email"]);
 
-  console.log(successfulLogin);
+
+  console.log(cookies.email);
   function clickOnSpirit(spiritName) {
     setSpiritName(spiritName);
     document.getElementsByClassName(
@@ -44,7 +47,7 @@ function App() {
     document.getElementById("glass-background").style.display = "none";
   }
 
-  const clickOnFilter = () => {};
+  // const clickOnFilter = () => {};
 
   const handleCardClick = (id) => {
     setCurrentId(id);
@@ -56,6 +59,9 @@ function App() {
   }
 
   const logIn = (name) => {
+    setCookie("email", name, {
+      path: "/"
+    });
     setIsLoggedIn(name);
   };
 
@@ -65,6 +71,7 @@ function App() {
 
   const handleSuccessfulLogin = () =>{
     setSuccessFulLogin(true);
+
   }
 
   return (
