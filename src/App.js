@@ -14,6 +14,7 @@ import LoginForm from "./components/forms/LoginForm.js";
 import GetSpirit from "./components/apis/GetSpirit";
 import header from "./header.jpg";
 import Logout from "./components/Logout";
+import IsLoggedIn from "./components/IsLoggedIn";
 import FavoriteCockTails from "./components/apis/FavoriteCocktails.js"
 
 import { SearchResultByIngredients } from "./components/apis/SearchResultByIngredients.js";
@@ -81,10 +82,12 @@ function App() {
       <div className="App">
         <div className="wrapper">
           <div id="header">
+            <IsLoggedIn isLoggedIn={isLoggedIn} />
             <Link to="/">
               <h1 id="header-text">Soda-licious</h1>
             </Link>
             <img src={header} id="header-pic" />
+           
           </div>
           <NavigationBar
             getSearchResult={getSearchResult}

@@ -51,7 +51,7 @@ export default function RegistrationForm() {
 
     return (
         <React.Fragment>
-            <h2>Registration</h2>
+            <h2 className="form-header">Registration</h2>
             <div className="ui inverted segment">
                 <div className="centered-form">
                     <div className="ui inverted form right-align-form">
@@ -68,7 +68,7 @@ export default function RegistrationForm() {
                             <label>Name</label>
                             <input type="text" placeholder="Name" value={name} onChange={handleNameChange} required/>
                         </div>
-                        <div className="ui submit button" onClick={clickOnRegistration}>Register</div>
+                        <div className="ui inverted red basic button" onClick={clickOnRegistration}>Register</div>
                     </div>
                 </div>
             </div>
