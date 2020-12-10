@@ -48,10 +48,6 @@ export const NavigationBar = (props) => {
             <Nav.Link href="/registration">Registration</Nav.Link>
             <Favorites/>
             <LoginButton/>
-            <IsLoggedIn
-              isLoggedIn={props.isLoggedIn}
-              handleLogout={props.handleLogout}
-            />
             {/*<p id="isLoggedIn">{You are logged in as: {props.isLoggedIn}}</p>*/}
           </Nav>
 

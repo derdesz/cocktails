@@ -8,6 +8,6 @@ export default function LoginButton () {
     if(cookies.email.length > 0) {
         return null;
     } else {
-        return <Nav.Link href="/login">Log in</Nav.Link>
+        return <Nav.Link className="ui inverted red basic button" id="login-link" href="/login">Log in</Nav.Link>
     }
 }
