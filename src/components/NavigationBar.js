@@ -48,6 +48,7 @@ export const NavigationBar = (props) => {
             <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
             <Nav.Link href="/registration">Registration</Nav.Link>
             <Nav.Link href="/login">Log in</Nav.Link>
+            <Nav.Link href="/favorites">My favorites</Nav.Link>
             <IsLoggedIn
               isLoggedIn={props.isLoggedIn}
               handleLogout={props.handleLogout}

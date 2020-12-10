@@ -13,6 +13,7 @@ import LoginForm from "./components/forms/LoginForm.js";
 import GetSpirit from "./components/apis/GetSpirit";
 import header from "./header.jpg";
 import Logout from "./components/Logout";
+import FavoriteCockTails from "./components/apis/FavoriteCocktails.js"
 
 import { SearchResultByIngredients } from "./components/apis/SearchResultByIngredients.js";
 import { SearchResultByName } from "./components/apis/SearchResultByName.js";
@@ -97,6 +98,15 @@ function App() {
             <Route
               path="/login"
               render={(props) => <LoginForm {...props} logIn={logIn} />}
+            />
+          </div>
+          <div>
+            <Route
+              path="/favorites"
+              render={(props) => (
+              <FavoriteCockTails 
+              {...props} 
+              handleCardClick={handleCardClick} />)}
             />
           </div>
           <div>
