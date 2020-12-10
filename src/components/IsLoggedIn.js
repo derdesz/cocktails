@@ -2,7 +2,7 @@ import React from "react";
 import Logout from "./Logout";
 import { useCookies } from "react-cookie";
 
-const IsLoggedIn = ({isLoggedIn, handleLogout, successfulLogin}) => {
+const IsLoggedIn = ({handleLogout}) => {
     const [cookies, setCookie] = useCookies(["email"]);
 
     if (cookies.email.length > 0) {
