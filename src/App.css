@@ -266,3 +266,40 @@ text-align: right;
   padding-bottom: 30px;
   color: white;
 }
+
+.fas {
+	color: red;
+}
+
+.heart {
+  cursor: pointer;
+  font-size: 30pt;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.pulse {
+	animation: pulse .5s;
+}
+
+@keyframes .pulse {
+	0% {transform: scale(1); }
+	100% {transform: scale(1);}
+	100% {transform: scale(1);}
+}
+
+.logged-in-text{
+  color: white;
+  padding-right: 20px;
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+
+}
+
+#logged-in-container{
+  display: flex;
+  position: relative;
+  transform: translate(30%);
+}
