@@ -289,3 +289,17 @@ text-align: right;
 	100% {transform: scale(1);}
 }
 
+.logged-in-text{
+  color: white;
+  padding-right: 20px;
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -50%);
+
+}
+
+#logged-in-container{
+  display: flex;
+  position: relative;
+  transform: translate(30%);
+}
