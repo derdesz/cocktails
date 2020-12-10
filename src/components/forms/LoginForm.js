@@ -10,6 +10,7 @@ export default function LoginForm({logIn}) {
     const [username, setUsername] = useState("");
     const [successfulLogin, setSuccessFulLogin] = useState(false);
 
+
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
         setUsername(event.target.value);
@@ -19,9 +20,10 @@ export default function LoginForm({logIn}) {
     setPassword(event.target.value);
   };
 
+
   const checkValidLogin = (name) => {
     if (name) {
-        logIn(name);
+        logIn(name);  
     } else {
       alert("not ok");
     }
@@ -47,14 +49,13 @@ export default function LoginForm({logIn}) {
             .then(res => {
                 checkValidLogin(res.config.user.email);
                 setSuccessFulLogin(true);
-
+        })
                 // window.location.href = 'http://localhost:3000';
-
-              })
               .catch(er => {
                 console.log("no data sorry ", er);
               });
     }
+
 
     if(successfulLogin) {
         return <Redirect to="/"/>
@@ -76,9 +77,8 @@ export default function LoginForm({logIn}) {
                             <div className="ui submit button" onClick={clickOnLogIn}>Log in</div>
                         </div>
                     </div>
-                </div>
+              </div>
             </React.Fragment>
         )
     }
-
 }
