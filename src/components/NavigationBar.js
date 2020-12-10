@@ -42,7 +42,7 @@ export const NavigationBar = (props) => {
                         <Nav.Link href="/about-us" >About us</Nav.Link>
                         <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
                         <Nav.Link href="/registration">Registration</Nav.Link>
-                        <Nav.Link href="/login">Log in</Nav.Link>
+                        <Nav.Link id="login-link" href="/login">Log in</Nav.Link>
                         <Nav.Link href="/favorites">My favorites</Nav.Link>
                     </Nav>
 

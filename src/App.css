@@ -304,3 +304,8 @@ text-align: right;
   right: 20px;
   top: 20px;
 }
+
+#login-link{
+  position: absolute;
+  right: 300px;
+}
