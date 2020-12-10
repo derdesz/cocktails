@@ -11,8 +11,6 @@ import IsLoggedIn from "./IsLoggedIn";
 
 export const NavigationBar = (props) => {
 
-
-
     return (
         <div id="navbar">
             <Navbar bg="dark" expand="lg">
@@ -45,6 +43,7 @@ export const NavigationBar = (props) => {
                         <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
                         <Nav.Link href="/registration">Registration</Nav.Link>
                         <Nav.Link href="/login">Log in</Nav.Link>
+                        <Nav.Link href="/favorites">My favorites</Nav.Link>
                         <IsLoggedIn
                             successfulLogin={props.successfulLogin}
                             isLoggedIn={props.isLoggedIn}
