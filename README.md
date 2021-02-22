@@ -1,4 +1,4 @@
-# Soda-Licious Cocktail site (backend service)
+# Soda-Licious Cocktail site (frontend service)
 
 ![image](https://user-images.githubusercontent.com/59392230/108689259-287ea800-74f9-11eb-9569-586b8deae999.png)
 
