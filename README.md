@@ -1,6 +1,6 @@
 # Soda-Licious Cocktail site (backend service)
 
-https://user-images.githubusercontent.com/59392230/108688284-05072d80-74f8-11eb-9362-fbf59edd04d5.png
+![image](https://user-images.githubusercontent.com/59392230/108689259-287ea800-74f9-11eb-9569-586b8deae999.png)
 
 You can find the backend repository here: https://github.com/derdesz/cocktails-spring.git
 
@@ -11,16 +11,16 @@ The front end was created with the React library, Bootstrap and Material UI was 
 
 It is possible to register and login, in order to be able to upload new recipes and collect favorite cocktail recipes. The login information and favorite cocktails are then stored in Hibernate in the backend. 
 
-## Future plans:
+### Future plans:
 - corrections in security (backend)
 - image upload (frontend & backend)
 - bug fix: collecting favorite cocktails
 
-## Installations:
+### Installations:
 - npm install
 - npm install axios
 - npm install js-cookie --save
 - npm install --save react-router-dom
 
-## Running the app:
+### Running the app:
 - run 'npm start' from the terminal
