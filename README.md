@@ -1,5 +1,7 @@
 # Soda-Licious Cocktail site (backend service)
 
+https://user-images.githubusercontent.com/59392230/108688284-05072d80-74f8-11eb-9362-fbf59edd04d5.png
+
 You can find the backend repository here: https://github.com/derdesz/cocktails-spring.git
 
 Our cocktail site is an application for searching and filtering cocktail recipes, adding new ones and saving your favorites into the database. 
