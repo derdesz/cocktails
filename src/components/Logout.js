@@ -27,6 +27,11 @@ export default function Logout(handleLogout) {
                 </button>
             </Link>
         );
-    } else return null;
+    } else {
+        return(
+            <div class="ui red message">You are logged out.</div>
+        )
+
+    };
 
 }
