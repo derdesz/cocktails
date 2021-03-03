@@ -8,7 +8,7 @@ export default function Logout(handleLogout) {
 
 
     const logout = () => {
-    axios.post("http://localhost:8080/logout");
+    axios.get("http://localhost:8080/logout");
         setCookie("email", "", {
             path: "/"
         });
