@@ -9,7 +9,7 @@ const IsLoggedIn = () => {
     return (
       <div id="logged-in-container">
         <p className="logged-in-text"> You are logged in as: {cookies.email}</p>
-        <Logout />
+        <Logout/>
       </div>
     );
   } else {

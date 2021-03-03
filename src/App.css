@@ -309,3 +309,7 @@ text-align: right;
   position: absolute;
   right: 300px;
 }
+
+.ui.red.message{
+  margin-top: 50px;
+}
