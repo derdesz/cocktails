@@ -8,15 +8,17 @@ export default function Logout(handleLogout) {
 
 
     const logout = () => {
-    axios.get("http://localhost:8080/logout");
+    axios.get("http://localhost:8080/log-out", {withCredentials: true})
+    .then(        
         setCookie("email", "", {
-            path: "/"
-        });
+        path: "/"
+    }))
   };
+
 
     if (cookies.email.length > 0) {
         return (
-            <Link to="/logout">
+            <Link to="/log-out">
                 <button
                     className="ui inverted red basic button"
                     onClick={() => {
@@ -27,7 +29,8 @@ export default function Logout(handleLogout) {
                 </button>
             </Link>
         );
-    } else {
+    } 
+    else {
         return(
             <div class="ui red message">You are logged out.</div>
         )

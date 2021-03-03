@@ -35,8 +35,6 @@ function App() {
   const [successfulLogin, setSuccessFulLogin] = useState(false);
   const [cookies, setCookie] = useCookies(["email"]);
 
-
-  console.log(cookies.email);
   function clickOnSpirit(spiritName) {
     setSpiritName(spiritName);
     document.getElementsByClassName(
@@ -128,7 +126,7 @@ function App() {
             />
           </div>
           <div>
-            <Route path="/logout" render={(props) => <Logout {...props} />} />
+            <Route path="/log-out" render={(props) => <Logout {...props} />} />
           </div>
           <div>
             <Route
