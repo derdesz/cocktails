@@ -11,6 +11,7 @@ import IsLoggedIn from "./IsLoggedIn";
 import {useCookies} from "react-cookie";
 import LoginButton from "./LoginButton";
 import Favorites from "./Favorites";
+import AddCocktailLink from "./AddCocktailLink";
 
 export const NavigationBar = (props) => {
     const [cookies, setCookie] = useCookies(["email"]);
@@ -44,7 +45,7 @@ export const NavigationBar = (props) => {
 
             <Nav.Link href="/spirits">Spirits</Nav.Link>
             <Nav.Link href="/about-us">About us</Nav.Link>
-            <Nav.Link href="/add-cocktail">Add cocktail</Nav.Link>
+            <AddCocktailLink/>
             <Nav.Link href="/registration">Registration</Nav.Link>
             <Favorites/>
             <LoginButton/>
