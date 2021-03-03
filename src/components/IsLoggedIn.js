@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 const IsLoggedIn = () => {
     const [cookies, setCookie] = useCookies(["email"]);
 
-    if (cookies.email.length > 0) {
+    if (cookies.email) {
         return (
             <div id="logged-in-container">
                 <p className="logged-in-text"> You are logged in as: {cookies.email}</p>

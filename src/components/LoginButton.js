@@ -5,7 +5,7 @@ import {useCookies} from "react-cookie";
 export default function LoginButton () {
     const [cookies, setCookie] = useCookies(["email"]);
 
-    if(cookies.email.length > 0) {
+    if(cookies.email) {
         return null;
     } else {
         return <Nav.Link className="ui inverted red basic button" id="login-link" href="/login">Log in</Nav.Link>
