@@ -22,30 +22,23 @@ const GetCocktailById = ({cocktailId}) => {
             method: 'get',
             url: cocktail,
         });
-
-        const favoriteRequest = axios({
-            method: 'get',
-            url: isFavorite,
-            withCredentials: true
-        });
-        console.log(cocktailRequest)
-        
+            
         // if user logged in, favoriteRequest is added to the requests array
         const requests = [cocktailRequest];
         if (cookies.email) { 
+            const favoriteRequest = axios({
+                method: 'get',
+                url: isFavorite,
+                withCredentials: true
+            });
             requests.push(favoriteRequest)
         }
-        // if(!cookies.email && requests.values.length > 1){
-        //     requests.pop()
-        // }
-        console.log(requests)
+
         async function fetchCocktail() {
             try {
                 await axios.all(requests)
                     .then(axios.spread((...responses) => {
-
                         const cocktailDetails = responses[0].data;
-                        console.log(cocktailDetails)
                         setCocktailName(cocktailDetails.strDrink);
                         setInstructions(cocktailDetails.strInstructions);
                         setCategory(cocktailDetails.strCategory);
@@ -55,14 +48,12 @@ const GetCocktailById = ({cocktailId}) => {
                             setImgSrc(emptyCocktail)
                         }
                         setIngredients(cocktailDetails.allIngredients);
-                        console.log(cookies)
                         // if user logged in, liked is set
                         if (cookies.email) {
                             const isFavoriteValue = responses[1].data;
                             setLiked(responses[1].data);
-                            console.log("liked")
-                            console.log(isFavoriteValue)
-                            console.log(liked)
+                            console.log(`isFavoriteValue: ${isFavoriteValue}`)
+                            console.log(`liked: ${liked}`)
                         }
                     }, []))
             } catch (err) {
@@ -70,7 +61,7 @@ const GetCocktailById = ({cocktailId}) => {
             };
         }
         fetchCocktail();
-    }, [cocktailId, cookies, liked]);
+    }, [cocktailId, liked]);
 
     if (cocktailName !== null) {
         return (
