@@ -1,11 +1,17 @@
-import React from "react";
-import {useCookies} from "react-cookie";
+import React, { useState, useEffect }  from "react";
+import { useCookies } from "react-cookie";
 import axios from "axios";
 
 const Heart = ({cocktailId, liked}) => {
     const [cookies, setCookie] = useCookies(["email"]);
-
-    // let liked = false;
+    
+    useEffect(async () => {
+        if (cookies.email){
+            const heartElement = document.getElementById(`heart-${cocktailId}`)
+            changeHeart(liked, heartElement)
+        }
+    }, [liked]);
+    
     const heartClick = event => {
         console.log("reached liked")
         liked = !liked; // toggle the like ( flipping the variable)
@@ -34,7 +40,7 @@ const Heart = ({cocktailId, liked}) => {
     }
 
     if (cookies.email) {
-        return <i className="far fa-heart js-heart heart" data-cocktail-id={cocktailId} onClick={heartClick}/>
+        return <i className="far fa-heart js-heart heart" id={`heart-${cocktailId}`} data-cocktail-id={cocktailId} onClick={heartClick}/>
     } else {
         return null;
     }
