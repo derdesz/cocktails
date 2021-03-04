@@ -10,26 +10,43 @@ const GetCocktailById = ({cocktailId}) => {
     const [category, setCategory] = useState("");
     const [ingredients, setIngredients] = useState([]);
 
-
     useEffect(() => {
+
+        const cocktail = `http://localhost:8080/${cocktailId}`;
+        const isFavorite = `http://localhost:8080/is-favorite/${cocktailId}`
+
+        const cocktailRequest = axios({
+            method: 'get',
+            url: cocktail,
+        });
+        const favoriteRequest = axios({
+            method: 'get',
+            url: isFavorite,
+            withCredentials: true
+        });
+        console.log(cocktailRequest)
+        // console.log(favoriteRequest)
+
+
         async function fetchCocktail() {
             try {
-                const asyncResponse = await axios(
-                    `http://localhost:8080/${cocktailId}`
-                );
-                const cocktailDetails = asyncResponse.data;
-                const recipe = [];
-                setCocktailName(cocktailDetails.strDrink);
-                setInstructions(cocktailDetails.strInstructions);
-                setCategory(cocktailDetails.strCategory);
-                if (cocktailDetails.strDrinkThumb !== null) {                    
-                    setImgSrc(cocktailDetails.strDrinkThumb)
-                }
-                else {
-                    setImgSrc(emptyCocktail)
-                }
-                setIngredients(cocktailDetails.allIngredients);
-                
+                await axios.all([cocktailRequest, favoriteRequest])
+                    .then(axios.spread((...responses) => {
+                        const cocktailDetails = responses[0].data;
+                        //const favorite = responses[1].data;
+
+                        console.log(cocktailDetails)
+                        //console.log(favorite)
+                        setCocktailName(cocktailDetails.strDrink);
+                        setInstructions(cocktailDetails.strInstructions);
+                        setCategory(cocktailDetails.strCategory);
+                        if (cocktailDetails.strDrinkThumb !== null) {
+                            setImgSrc(cocktailDetails.strDrinkThumb)
+                        } else {
+                            setImgSrc(emptyCocktail)
+                        }
+                        setIngredients(cocktailDetails.allIngredients);
+                    }, []))
             } catch (err) {
                 console.error(err);
             }
