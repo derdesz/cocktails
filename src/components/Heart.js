@@ -9,10 +9,18 @@ const Heart = ({cocktailId, liked}) => {
     const heartClick = event => {
         console.log("reached liked")
         liked = !liked; // toggle the like ( flipping the variable)
-
         // this is what we clicked on
         const target = event.currentTarget;
+        changeHeart(liked, target);
 
+        axios({
+            method: 'post',
+            url: `http://localhost:8080/favorites/${cocktailId}`,
+            withCredentials: true
+        }, [])
+    }
+
+    const changeHeart = (liked, target) => {
         if (liked) {
             // remove empty heart if liked and add the full heart
             target.classList.remove('far');
@@ -23,12 +31,6 @@ const Heart = ({cocktailId, liked}) => {
             target.classList.add('far');
             target.classList.remove('pulse');
         }
-        axios({
-            method: 'post',
-            url: `http://localhost:8080/favorites/${cocktailId}`,
-            withCredentials: true
-        })
-        console.log(cocktailId);
     }
 
     if (cookies.email) {
