@@ -4,7 +4,7 @@ import axios from 'axios';
 import Heart from "../Heart";
 
 
-const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients, cocktailId}) => {
+const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients, cocktailId, liked}) => {
 
     if (cocktailName !== "") {
         return (
@@ -13,7 +13,7 @@ const DetailedCard = ({imgSrc, cocktailName, instructions, category, ingredients
                 <div className="ui slide masked reveal image">
                     <img src={imgSrc} className="visible content"/>
                     <div className="hidden content scroller">
-                        <Heart cocktailId={cocktailId}/>
+                        <Heart cocktailId={cocktailId} liked={liked}/>
                         <h4>Ingredients:</h4>
                         <Ingredients ingredients={ingredients}/>
                         <div className="ui horizontal divider"></div>

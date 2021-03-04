@@ -2,10 +2,10 @@ import React from "react";
 import {useCookies} from "react-cookie";
 import axios from "axios";
 
-const Heart = ({cocktailId}) => {
+const Heart = ({cocktailId, liked}) => {
     const [cookies, setCookie] = useCookies(["email"]);
 
-    let liked = false;
+    // let liked = false;
     const heartClick = event => {
         console.log("reached liked")
         liked = !liked; // toggle the like ( flipping the variable)
